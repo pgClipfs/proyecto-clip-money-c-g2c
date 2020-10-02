@@ -13,3 +13,5 @@ repo local, escribir "git config --global user.email 'email'" y "git config --gl
 	name = "su nombre o nick"
 
 guardan los cambios y eso es todo, ya pueden hacer el commit
+
+hola chicos!
