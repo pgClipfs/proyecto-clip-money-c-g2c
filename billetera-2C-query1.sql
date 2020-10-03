@@ -1,6 +1,11 @@
-insert into login values ('1234','2020-09-29 13:05','pepe95')
-insert into login values ('1111','2020-09-29','sabrii')
-insert into login values ('1122','2020-09-29','juani')
+insert into login (password, ultimo_acceso, usuario, id_us,log_activo)
+values ('1234','2020-09-29 13:05','pepe95',8,1)
+
+insert into login (password, ultimo_acceso, usuario, id_us,log_activo)
+values ('1111','2020-09-29','sabrii',9,1)
+
+insert into login (password, ultimo_acceso, usuario, id_us,log_activo)
+values ('1122','2020-09-29','juani',10,1)
 
 select * from login
 delete from login where id_usuario=1
@@ -8,33 +13,62 @@ delete from login
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-insert into ubicacion (pais, provincia, localidad,barrio, calle, nro_casa, departamento)
-values ('argentina','cordoba','rio cuarto','alberdi','c.pellegrini',49,0)
+insert into contacto (pais, provincia, localidad, barrio, calle, nro_casa, departamento, cod_postal)
+values (1,1,1,'alberdi','c.pellegrini',49,0,4444)
 
-insert into ubicacion (pais, provincia, localidad,barrio, calle, nro_casa, departamento)
-values ('argentina','cordoba','rio cuarto','alberdi','c.pellegrini',49,0)
+insert into contacto (pais, provincia, localidad,barrio, calle, nro_casa, departamento, cod_postal)
+values (1,1,1,'alberdi','c.pellegrini',49,0)
 
-insert into ubicacion (pais, provincia, localidad,barrio, calle, nro_casa, departamento, piso, puerta)
-values ('argentina','cordoba','rio cuarto','alberdi','c.pellegrini',49,1,3,'a')
+insert into contacto (pais, provincia, localidad,barrio, calle, nro_casa, departamento, piso, puerta, cod_postal)
+values (1,2,1,'alberdi','c.pellegrini',49,1,3,'a')
 
-select * from ubicacion
-delete from ubicacion where id_usuario=1
-delete from ubicacion
+select * from contacto
+delete from contacto where id_usuario=1
+delete from contacto
 
 --------------------------------------------------------------------------------------------------------------------------------
+insert into paises (nom_pais)
+values ('argentina')
 
-insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,id_login,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
-values ('jose','perez','img/fotof.jmg','img/fotor.jmg',8,35689528,'jose_love@sumail.com','1991-09-29',19356895286,358456825,1)
+insert into paises (nom_pais)
+values ('chile')
 
-insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,id_login,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
-values ('sabrina','perez','img/fotof.jmg','img/fotor.jmg',9,35777528,'sabrii@sumail.com','1991-09-29',19357775286,358456825,1)
+select * from paises
+delete from paises where id_usuario=1
+delete from paises
+--------------------------------------------------------------------------------------------------------------------------------
+insert into provincias (nom_prov)
+values ('cordoba')
 
-insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,id_login,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
-values ('juan','hernandez','img/fotof.jmg','img/fotor.jmg',10,35777528,'juanito@sumail.com','1991-09-05',19355689286,35568928,2)
+insert into provincias (nom_pais)
+values ('buenos aires')
+
+select * from provincias
+delete from provincias where id_usuario=1
+delete from provincias
+--------------------------------------------------------------------------------------------------------------------------------
+insert into localidades (nom_loc)
+values ('cordoba')
+
+insert into localidades  (nom_loc)
+values ('rio cuarto')
+
+select * from localidades 
+delete from localidades  where id_usuario=1
+delete from localidades 
+--------------------------------------------------------------------------------------------------------------------------------
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('jose','perez','img/fotof.jmg','img/fotor.jmg',35689528,'jose_love@sumail.com','1991-09-29',19356895286,358456825,1)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('sabrina','perez','img/fotof.jmg','img/fotor.jmg',35777528,'sabrii@sumail.com','1991-09-29',19357775286,358456825,1)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('juan','hernandez','img/fotof.jmg','img/fotor.jmg',35777528,'juanito@sumail.com','1991-09-05',19355689286,35568928,2)
 
 select * from usuarios
 select id_usuario, nombre, dni from usuarios
-delete from usuarios
+delete from usuarios 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -58,8 +92,8 @@ delete from operaciones
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO cuentas (monto_al_descubierto, saldo, id_us, id_op) VALUES (9000, 40000, 5, 9)
-INSERT INTO cuentas (monto_al_descubierto, saldo, id_us, id_op) VALUES (7000, 80000, 6, 10)
+INSERT INTO cuentas (monto_al_descubierto, saldo, id_us, id_op, cuenta_activa) VALUES (9000, 40000, 5, 9, 1)
+INSERT INTO cuentas (monto_al_descubierto, saldo, id_us, id_op, cuenta_activa) VALUES (7000, 80000, 6, 10, 1)
 
 select * from cuentas
 delete from cuentas where id_us=1
