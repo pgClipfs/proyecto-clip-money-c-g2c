@@ -33,6 +33,30 @@ values ('argentina')
 insert into paises (nom_pais)
 values ('chile')
 
+insert into paises (nom_pais)
+values ('uruguay')
+
+insert into paises (nom_pais)
+values ('peru')
+
+insert into paises (nom_pais)
+values ('venezuela')
+
+insert into paises (nom_pais)
+values ('bolivia')
+
+insert into paises (nom_pais)
+values ('mexico')
+
+insert into paises (nom_pais)
+values ('paraguay')
+
+insert into paises (nom_pais)
+values ('ecuador')
+
+insert into paises (nom_pais)
+values ('brasil')
+
 select * from paises
 delete from paises where id_usuario=1
 delete from paises
@@ -65,6 +89,27 @@ values ('sabrina','perez','img/fotof.jmg','img/fotor.jmg',35777528,'sabrii@sumai
 
 insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
 values ('juan','hernandez','img/fotof.jmg','img/fotor.jmg',35777528,'juanito@sumail.com','1991-09-05',19355689286,35568928,2)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('romina','lopez','img/fotof.jmg','img/fotor.jmg',35775666,'rl95@sumail.com','1994-12-05',19354569286,35536928,1)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('santiago','rios','img/fotof.jmg','img/fotor.jmg',35985666,'tiagorios@sumail.com','1993-02-15',19354569741,35536741,2)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('abel','lozano','img/fotof.jmg','img/fotor.jmg',35975648,'rl95@sumail.com','1991-06-25',19352229286,35222928,1)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('alicia','lugones','img/fotof.jmg','img/fotor.jmg',35714566,'alilu58@sumail.com','1997-12-05',19354458286,35458928,1)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('andres','martinez','img/fotof.jmg','img/fotor.jmg',35766366,'amnez@sumail.com','1990-11-01',19354789686,35547896,2)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('alonso','alvarez','img/fotof.jmg','img/fotor.jmg',35752366,'alonso1994@sumail.com','1994-01-28',19354631286,35514566,1)
+
+insert into usuarios (nombre,apellido,foto_frente_dni,foto_reverso_dni,dni,email,fecha_nac,cuilcuit,telefono,id_ubic)
+values ('susana','gimenez','img/fotof.jmg','img/fotor.jmg',35772266,'rl95@sumail.com','1992-04-18',19354567486,35537428,2)
 
 select * from usuarios
 select id_usuario, nombre, dni from usuarios
