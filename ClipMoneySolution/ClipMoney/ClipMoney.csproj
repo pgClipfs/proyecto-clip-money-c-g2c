@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -134,12 +137,28 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OperacionController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cuenta.cs" />
+    <Compile Include="Models\Deposito.cs" />
+    <Compile Include="Models\Extraccion.cs" />
+    <Compile Include="Models\GestorOperacion.cs" />
+    <Compile Include="Models\GestorPais.cs" />
+    <Compile Include="Models\GestorUsuario.cs" />
+    <Compile Include="Models\GiroAlDescubierto.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\OperacionBase.cs" />
+    <Compile Include="Models\Pais.cs" />
+    <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\Transferencia.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TextFile1.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -175,11 +194,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Obtener.cshtml" />
+    <Content Include="Views\Operacion\Index.cshtml" />
+    <Content Include="Views\Operacion\Depositar.cshtml" />
+    <Content Include="Views\Operacion\ObtenerUltimosMovimientos.cshtml" />
+    <Content Include="Views\Shared\elemOperacionBase.cshtml" />
+    <Content Include="Views\Operacion\Extraer.cshtml" />
+    <Content Include="Views\Operacion\Transferir.cshtml" />
+    <Content Include="Views\Operacion\GirarAlDescubierto.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,23 @@
+﻿@*@model ClipMoney.Models.Deposito*@
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework.</p>
+    <form action="/Operacion/Depositar" method="post">
+        <input type="text" name="monto" value="" />
+        <input type="text" name="idCuenta" value="" />
+        <input type="submit" name="name" value="Insert" />
+    </form>
+    <h3>Operacion exitosa, depositaste $@Model.Monto en la cuenta con ID = @Model.IdCuenta</h3>
+    <h2>Traer Valor aca-index de operacion</h2>
+    @*<h5>Nombre de pais desde bd es: @Model.NombrePais</h5>
+    <form action="/Usuario/Obtener" method="get">
+        <input type="text" name="nuevo" value="" />
+        <input type="submit" name="name" value="Insert" />
+    </form>*@
+</div>
+
