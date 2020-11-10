@@ -138,7 +138,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OperacionController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,13 +145,9 @@
     <Compile Include="Models\Deposito.cs" />
     <Compile Include="Models\Extraccion.cs" />
     <Compile Include="Models\GestorOperacion.cs" />
-    <Compile Include="Models\GestorPais.cs" />
-    <Compile Include="Models\GestorUsuario.cs" />
     <Compile Include="Models\GiroAlDescubierto.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\OperacionBase.cs" />
-    <Compile Include="Models\Pais.cs" />
-    <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Transferencia.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,8 +189,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Usuario\Index.cshtml" />
-    <Content Include="Views\Usuario\Obtener.cshtml" />
     <Content Include="Views\Operacion\Index.cshtml" />
     <Content Include="Views\Operacion\Depositar.cshtml" />
     <Content Include="Views\Operacion\ObtenerUltimosMovimientos.cshtml" />

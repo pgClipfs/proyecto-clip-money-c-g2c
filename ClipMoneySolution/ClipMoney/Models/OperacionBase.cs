@@ -10,7 +10,7 @@ namespace ClipMoney.Models
         private int idOperacion;
         private DateTime fechaDeOperacion;
         private decimal monto;
-        private Nullable<int> cvuCbuDestino;
+        private Nullable<long> cvuCbuDestino;
         private int tipoDeOperacion;
         private long idCuenta;
 
@@ -19,7 +19,7 @@ namespace ClipMoney.Models
 
         }
 
-        public OperacionBase(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<int> cvuCbuDestino, int tipoDeOperacion, long idCuenta)
+        public OperacionBase(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, long idCuenta)
         {
             this.idOperacion = idOperacion;
             this.fechaDeOperacion = fechaDeOperacion;
@@ -34,7 +34,7 @@ namespace ClipMoney.Models
         public decimal Monto { get => monto; set => monto = value; }
         public int TipoDeOperacion { get => tipoDeOperacion; set => tipoDeOperacion = value; }
         public long IdCuenta { get => idCuenta; set => idCuenta = value; }
-        public Nullable<int> CvuCbuDestino { get => cvuCbuDestino; set => cvuCbuDestino = value; }
+        public Nullable<long> CvuCbuDestino { get => cvuCbuDestino; set => cvuCbuDestino = value; }
 
         //public abstract void Operar(decimal monto, int idCuenta); comentado porque las clases derivadas toman distintos parámetros
     }

@@ -32,17 +32,17 @@ namespace ClipMoney.Models
                     byte idOperacion = dr.GetByte(0);
                     DateTime fechaDeOperacion = dr.GetDateTime(1);
                     decimal monto = dr.GetDecimal(2);
-                    int cvuCbuDestino;
+                    Nullable<long> cvuCbuDestino;
                     if (dr.IsDBNull(3))
                     {
-                        cvuCbuDestino = 0;
+                        cvuCbuDestino = null;
                     }
                     else
                     {
-                        cvuCbuDestino = dr.GetInt32(3);
+                        cvuCbuDestino = dr.GetInt64(3);
                     }
-                    byte tipoOperacion = dr.GetByte(5);
-                    long idDeCuenta = dr.GetInt64(6);
+                    byte tipoOperacion = dr.GetByte(4);
+                    long idDeCuenta = dr.GetInt64(5);
                     OperacionBase op = new OperacionBase(idOperacion, fechaDeOperacion, monto, cvuCbuDestino, tipoOperacion, idDeCuenta);
                     lista.Add(op);
                 }

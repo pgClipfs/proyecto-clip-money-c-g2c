@@ -13,11 +13,9 @@ namespace ClipMoney.Models
         {
 
         }
-
         public Extraccion(int idOperacion, DateTime fechaDeOperacion, decimal monto, int cvuCbuDestino, int tipoDeOperacion, long idCuenta) : base(idOperacion, fechaDeOperacion, monto, cvuCbuDestino, tipoDeOperacion, idCuenta)
         {
         }
-
         public void Extraer(decimal monto, int idCuenta)
         {
             string StrConn = "Server=DESKTOP-7SC2IQO\\SQLEXPRESS;Database=db_wallet_clip_money;Trusted_Connection=True;";

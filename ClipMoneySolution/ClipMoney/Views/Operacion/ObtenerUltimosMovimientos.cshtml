@@ -6,28 +6,15 @@
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework.</p>
+    <br />
     <form action="/Operacion/ObtenerUltimosMovimientos" method="get">
         <input type="text" name="idCuenta" value="" />
         <input type="submit" name="name" value="Insert" />
     </form>
-    <h3>Este es el primer elemento de la lista</h3>
+    <h3>Movimientos</h3>
     @foreach(var elem in Model)
     {
         @Html.Partial("~/Views/Shared/elemOperacionBase.cshtml", elem)
     }
-    @*<ul>
-        <li>@Model.First().IdOperacion</li>
-        <li>@Model.[0].FechaDeOperacion</li>
-        <li>@Model[0].Monto</li>
-        <li>@Model[0].IdOperacion</li>
-        <li>@ViewBag.listaOperaciones[0].FechaDeOperacion</li>
-    </ul>*@
-    <h2>Traer Valor aca-index de operacion y accion ObtenerUltimosMovimientos</h2>
-    @*<h5>Nombre de pais desde bd es: @Model.NombrePais</h5>
-    <form action="/Usuario/Obtener" method="get">
-        <input type="text" name="nuevo" value="" />
-        <input type="submit" name="name" value="Insert" />
-    </form>*@
 </div>
 

@@ -9,22 +9,12 @@ namespace ClipMoney.Models
 {
     public class Deposito : OperacionBase
     {
-        //private int cvuDestino;
         public Deposito()
         {
         }
-
         public Deposito(int idOperacion, DateTime fechaDeOperacion, decimal monto, int cvuCbuDestino, int tipoDeOperacion, long idCuenta) : base(idOperacion, fechaDeOperacion, monto, cvuCbuDestino, tipoDeOperacion, idCuenta)
         {
         }
-
-        //public Deposito(int idOperacion, DateTime fechaDeOperacion, decimal monto, int tipoDeOperacion, long idCuenta, int cvuDestino, int cbuDestino) : base(idOperacion, fechaDeOperacion, monto, tipoDeOperacion, idCuenta, cvuDestino, cbuDestino)
-        //{
-        //}
-
-
-        //public int CvuDestino { get => cvuDestino; set => cvuDestino = value; }
-
         public void Depositar(decimal monto, int idCuenta)
         {
             string StrConn = "Server=DESKTOP-7SC2IQO\\SQLEXPRESS;Database=db_wallet_clip_money;Trusted_Connection=True;";
