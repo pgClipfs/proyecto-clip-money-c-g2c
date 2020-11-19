@@ -1,0 +1,182 @@
+<div class="container">
+    <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+
+            <div class="card wizard-card" data-color="blue" id="wizardProfile">
+                <form action="" method="">
+            <!--        You can switch ' data-color="blue" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
+
+                    <div class="wizard-header">
+                        <h3>
+                           <b>CREA</b> TU PERFIL <br>
+                           <small>Esta informacion nos ayudara a crear tu nuevo perfil.</small>
+                        </h3>
+                    </div>
+
+                    <div class="wizard-navigation">
+                        <ul>
+                            <li><a href="#perfil" data-toggle="tab">Perfil</a></li>
+                            <li><a href="#datos" data-toggle="tab">Datos Personales</a></li>
+                            <li><a href="#direccion" data-toggle="tab">Direccion</a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane" id="perfil">
+                          <div class="row">
+                              <h4 class="col-sm-12 d-flex justify-content-center"> Comencemos con la informacion basica de tu cuenta</h4>
+                              <div class="col-sm-10 col-sm-offset-1">
+                                 <div class="picture-container">
+                                      <div class="picture">
+                                          <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                                          <input type="file" id="wizard-picture">
+                                      </div>
+                                      <h6>Sube una foto del frente de tu DNI</h6>
+                                  </div>
+                              </div>
+                              <div class="col-sm-10 col-sm-offset-1">
+                                  <div class="form-group">
+                                      <label>Email <small>(requerido)</small></label>
+                                      <input name="email" type="email" class="form-control" placeholder="juan@email.com">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Contraseña <small>(requerido)</small></label>
+                                    <input name="contraseña" type="text" class="form-control" placeholder="Abcd1234">
+                                </div>
+                                <div class="form-group">
+                                    <label>Repita su contraseña <small>(requerido)</small></label>
+                                    <input name="repita-contraseña" type="text" class="form-control" placeholder="Abcd1234">
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="datos">
+                            <h4 class="col-sm-12 d-flex justify-content-center"> Carga tus datos personales </h4>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                   <label>Nombre <small>(requerido)</small></label>
+                                   <input name="firstname" type="text" class="form-control" placeholder="Juan...">
+                                </div>
+                                <div class="form-group">
+                                   <label>Apellido <small>(requerido)</small></label>
+                                   <input name="apellido" type="text" class="form-control" placeholder="Lopez...">
+                                </div>
+                                <div class="form-group">
+                                    <label>DNI<small>(requerido)</small></label>
+                                    <input name="dni" type="text" class="form-control" placeholder="30555888">
+                                </div>
+                                <div class="form-group">
+                                    <label>CUIL/CUIT<small>(requerido)</small></label>
+                                    <input name="cuilcuit" type="text" class="form-control" placeholder="20-30555888-3">
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha nacimiento<small>(requerido)</small></label>
+                                    <input name="cuilcuit" type="date" class="form-control" placeholder="15/05/1990">
+                                </div>
+                                <div class="form-group">
+                                    <label>Numero de telefono<small>(requerido)</small></label>
+                                    <input name="tel" type="text" class="form-control" placeholder="3514539962">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="direccion">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h4 class="col-sm-12 d-flex justify-content-center"> Cuentanos donde vives </h4>
+                                    <h6 class="col-sm-12 d-flex justify-content-center">(informacion necesaria si desea una tarjeta)</h6>
+                                </div>
+                                <div class="col-sm-7 col-sm-offset-1">
+                                     <div class="form-group">
+                                        <label>Calle</label>
+                                        <input type="text" class="form-control" placeholder="Av Peron">
+                                      </div>
+                                </div>
+                                <div class="col-sm-3">
+                                     <div class="form-group">
+                                        <label>Altura</label>
+                                        <input type="text" class="form-control" placeholder="242">
+                                      </div>
+                                </div>
+                                <div class="col-sm-4 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>piso</label>
+                                       <input type="text" class="form-control" placeholder="5">
+                                     </div>
+                               </div>
+                               <div class="checkbox col-sm-4 col-sm-offset-1">
+                                    <label>
+                                        <input type="checkbox"> <b>Vivo en un departamento</b>
+                                    </label>
+                                </div>
+                               <div class="col-sm-4 col-sm-offset-1">
+                                <div class="form-group">
+                                   <label>puerta</label>
+                                   <input type="text" class="form-control" placeholder="b">
+                                 </div>
+                           </div>
+                                <div class="col-sm-4 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>Barrio</label>
+                                       <input type="text" class="form-control" placeholder="Alberdi">
+                                     </div>
+                               </div>
+                                <div class="col-sm-4 col-sm-offset-1">
+                                     <div class="form-group">
+                                        <label>Ciudad</label>
+                                        <input type="text" class="form-control" placeholder="Rio Cuarto">
+                                      </div>
+                                </div>
+                                <div class="col-sm-4 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>Provincia</label>
+                                       <input type="text" class="form-control" placeholder="Cordoba">
+                                     </div>
+                               </div>
+                                <div class="col-sm-5 col-sm-offset-1">
+                                     <div class="form-group">
+                                        <label>Country</label><br>
+                                         <select name="Pais" class="form-control">
+                                            <option value="Argentina"> Argentina </option>
+                                            <option value="Brasil"> Brasil </option>
+                                            <option value="Chile"> Chile </option>
+                                            <option value="Uruguay"> Uruguay </option>
+                                            <option value="otro">otro...</option>
+                                        </select>
+                                      </div>
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>Codigo Postal</label>
+                                       <input type="int" class="form-control" placeholder="5800">
+                                     </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wizard-footer height-wizard">
+                        <div class="pull-right">
+                            <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='siguiente' value='Siguiente' />
+                            <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finalizar' value='Finalizar' />
+
+                        </div>
+
+                        <div class="pull-left">
+                            <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='anterior' value='Anterior' />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </form>
+            </div>
+        </div> <!-- wizard container -->
+    </div>
+    </div><!-- end row -->
+</div> <!--  big container -->
+
+<div class="footer">
+    <p><b>¿Ya tienes una cuenta? Haz click <a href="index.html">AQUI</a></b></p>
+</div>
