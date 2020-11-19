@@ -27,13 +27,14 @@ namespace ClipMoney.Models
         private string localidad;
         private string provincia;
         private string pais;
+        private string password;
 
         public Usuario()
         {
 
         }
 
-        public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, string localidad, string provincia, string pais)
+        public Usuario(int idUsuario,string password, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, string localidad, string provincia, string pais)
         {
             this.idUsuario = idUsuario;
             this.nombre = nombre;
@@ -55,10 +56,12 @@ namespace ClipMoney.Models
             this.localidad = localidad;
             this.provincia = provincia;
             this.pais = pais;
+            this.password = password;
         }
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
+        public string Password { get => password; set => password = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string FotoFrenteDni { get => fotoFrenteDni; set => fotoFrenteDni = value; }
         public string FotoReversoDni { get => fotoReversoDni; set => fotoReversoDni = value; }
