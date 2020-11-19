@@ -18,7 +18,7 @@ namespace ClipMoney.Controllers
         }
 
 
-
+    /*
         [HttpPost]
         [Route("api/Usuario/login")]   //ver las rutas de ellos
         public Usuario login([FromBody]Usuario oUsuario)
@@ -53,7 +53,7 @@ namespace ClipMoney.Controllers
             }
             return oUsuarios;
         }
-
+     */
 
 
     }
