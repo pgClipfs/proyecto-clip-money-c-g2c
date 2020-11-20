@@ -1,44 +1,174 @@
-<!--
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
-  <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+<div class="image-container">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12 col-sm-offset-2">
+  
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+
+                <div class="col-sm-12 col-sm-offset-2">
+                <mat-horizontal-stepper class="card wizard-card">
+                    <mat-step label="Cuenta">
+                        <div class="tab-pane" id="perfil">
+                            <div class="row justify-content-center">
+                                <h4 class="col-sm-12 d-flex justify-content-center"> Comencemos con la informacion basica de tu cuenta</h4>
+                                <div class="col-sm-10 col-sm-offset-1">
+                                   <div class="picture-container">
+                                        <div class="picture">
+                                            <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                                            <input type="file" id="wizard-picture">
+                                        </div>
+                                        <h6>Sube una foto del frente de tu DNI</h6>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label>Email <small>(requerido)</small></label>
+                                        <input name="email" type="email" class="form-control" placeholder="juan@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Contraseña <small>(requerido)</small></label>
+                                      <input name="contraseña" type="text" class="form-control" placeholder="Abcd1234">
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Repita su contraseña <small>(requerido)</small></label>
+                                      <input name="repita-contraseña" type="text" class="form-control" placeholder="Abcd1234">
+                                  </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button mat-button matStepperPrevious>Anterior</button>
+                                <button mat-button matStepperNext>Siguiente</button>
+                            </div>
+                        </div>
+                    </mat-step>
+                    <mat-step label="Personal">
+                        <div class="tab-pane" id="datos">
+                            <div class="row justify-content-center">
+                                <h4 class="col-sm-12 d-flex justify-content-center"> Carga tus datos personales </h4>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                    <label>Nombre <small>(requerido)</small></label>
+                                    <input name="firstname" type="text" class="form-control" placeholder="Juan...">
+                                    </div>
+                                    <div class="form-group">
+                                    <label>Apellido <small>(requerido)</small></label>
+                                    <input name="apellido" type="text" class="form-control" placeholder="Lopez...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>DNI<small>(requerido)</small></label>
+                                        <input name="dni" type="text" class="form-control" placeholder="30555888">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CUIL/CUIT<small>(requerido)</small></label>
+                                        <input name="cuilcuit" type="text" class="form-control" placeholder="20-30555888-3">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Fecha nacimiento<small>(requerido)</small></label>
+                                        <input name="cuilcuit" type="date" class="form-control" placeholder="15/05/1990">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Numero de telefono<small>(requerido)</small></label>
+                                        <input name="tel" type="text" class="form-control" placeholder="3514539962">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button mat-button matStepperPrevious>Anterior</button>
+                            <button mat-button matStepperNext>Siguiente</button>
+                        </div>
+                    </mat-step>
+                    <mat-step label="Direccion">
+                        <div class="tab-pane" id="direccion">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-10">
+                                    <h4 class="col-sm-10 d-flex justify-content-center"> Cuentanos donde vives </h4>
+                                    <h6 class="col-sm-10 d-flex justify-content-center">(informacion necesaria si desea una tarjeta)</h6>
+                                </div>
+                                <div class="col-sm-6 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label>Calle</label>
+                                        <input type="text" class="form-control" placeholder="Av Peron">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                     <div class="form-group">
+                                        <label>Altura</label>
+                                        <input type="text" class="form-control" placeholder="242">
+                                      </div>
+                                </div>
+                                <div class="checkbox col-sm-4 col-sm-offset-1">
+                                    <label>
+                                        <input type="checkbox"> <b>Vivo en un departamento</b>
+                                    </label>
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>piso</label>
+                                       <input type="text" class="form-control" placeholder="5">
+                                     </div>
+                               </div>
+                               <div class="col-sm-3 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label>puerta</label>
+                                        <input type="text" class="form-control" placeholder="b">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>Barrio</label>
+                                       <input type="text" class="form-control" placeholder="Alberdi">
+                                    </div>
+                               </div>
+                                <div class="col-sm-3 col-sm-offset-1">
+                                     <div class="form-group">
+                                        <label>Ciudad</label>
+                                        <input type="text" class="form-control" placeholder="Rio Cuarto">
+                                      </div>
+                                </div>
+                                <div class="col-sm-4 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>Provincia</label>
+                                       <input type="text" class="form-control" placeholder="Cordoba">
+                                     </div>
+                               </div>
+                                <div class="col-sm-6 col-sm-offset-1">
+                                     <div class="form-group">
+                                        <label>Pais</label><br>
+                                         <select name="Pais" class="form-control">
+                                            <option value="Argentina"> Argentina </option>
+                                            <option value="Brasil"> Brasil </option>
+                                            <option value="Chile"> Chile </option>
+                                            <option value="Uruguay"> Uruguay </option>
+                                            <option value="otro">otro...</option>
+                                        </select>
+                                      </div>
+                                </div>
+                                <div class="col-sm-4 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label>Codigo Postal</label>
+                                       <input type="int" class="form-control" placeholder="5800">
+                                     </div>
+                               </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button mat-button matStepperPrevious>Anterior</button>
+                            <button mat-button>Registrar Cuenta</button>
+                        </div>
+                    </mat-step>
+
+                </mat-horizontal-stepper>
+                </div>
+
+            </div> <!-- wizard container -->
         </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-      <form [formGroup]="secondFormGroup">
-        <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
-    </mat-step>
-  </mat-horizontal-stepper>
-  -->
-  <button color="primary" mat-raised-button>boton</button>
-  <div>
-      <mat-button-toggle color="primary">texto</mat-button-toggle>
-  </div>
+        </div><!-- end row -->
+    </div> <!--  big container -->
+  
+    <div class="col-sm-12 d-flex justify-content-center">
+        <p><b>¿Ya tienes una cuenta? haz click <a [routerLink]="['/login']">AQUI</a> para iniciar sesion</b></p>
+    </div>
+</div>
+
