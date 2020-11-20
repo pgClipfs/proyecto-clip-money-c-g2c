@@ -36,7 +36,7 @@
   }
   
   .image-container {
-    background-image: url('../../img/bg4.jpg');
+    background-image: url('../../assets/img/bg4.jpg');
     min-height: 100vh;
     background-position: center center;
     background-size: cover;
