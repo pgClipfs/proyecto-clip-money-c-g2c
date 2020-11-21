@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="image-container">
     <div class="container">
         <div class="row">
@@ -9,92 +11,101 @@
                 <div class="col-sm-12 col-sm-offset-2">
                 <mat-horizontal-stepper class="card wizard-card">
                     <mat-step label="Cuenta">
-                        <div class="tab-pane" id="perfil">
+                        <div class="tab-pane" id="cuenta">
                             <div class="row justify-content-center">
                                 <h4 class="col-sm-12 d-flex justify-content-center"> Comencemos con la informacion basica de tu cuenta</h4>
-                                <div class="col-sm-10 col-sm-offset-1">
+                                <div class="col-sm-5 col-sm-offset-1">
                                    <div class="picture-container">
                                         <div class="picture">
-                                            <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                                            <input type="file" id="wizard-picture">
+                                            <img class="picture-src" id="wizardPicturePreview" title=""/>
+                                            <input type="file" id="wizard-picture" class="form-control" required />
                                         </div>
                                         <h6>Sube una foto del frente de tu DNI</h6>
                                     </div>
                                 </div>
+                                <div class="col-sm-5 col-sm-offset-1">
+                                    <div class="picture-container">
+                                         <div class="picture">
+                                             <img class="picture-src" id="wizardPicturePreview" title=""/>
+                                             <input type="file" id="wizard-picture" class="form-control" required />
+                                         </div>
+                                         <h6>Sube una foto del reverso de tu DNI</h6>
+                                     </div>
+                                 </div>
                                 <div class="col-sm-10 col-sm-offset-1">
                                     <div class="form-group">
-                                        <label>Email <small>(requerido)</small></label>
-                                        <input name="email" type="email" class="form-control" placeholder="juan@email.com">
+                                        <label><b>Email <small>(requerido)</small></b></label>
+                                        <input matInput name="email" type="email" class="form-control" placeholder="juan@email.com" required>
                                     </div>
                                     <div class="form-group">
-                                      <label>Contraseña <small>(requerido)</small></label>
-                                      <input name="contraseña" type="text" class="form-control" placeholder="Abcd1234">
+                                      <label><b>Contraseña <small>(requerido)</small></b></label>
+                                      <input matInput name="contraseña" type="text" class="form-control" placeholder="Abcd1234" required />
                                   </div>
                                   <div class="form-group">
-                                      <label>Repita su contraseña <small>(requerido)</small></label>
-                                      <input name="repita-contraseña" type="text" class="form-control" placeholder="Abcd1234">
+                                      <label><b>Repita su contraseña <small>(requerido)</small></b></label>
+                                      <input matInput name="repita-contraseña" type="text" class="form-control" placeholder="Abcd1234" required />
                                   </div>
                                 </div>
                             </div>
-                            <div>
-                                <button mat-button matStepperPrevious>Anterior</button>
-                                <button mat-button matStepperNext>Siguiente</button>
+                            <div class="row justify-content-center">
+                                <button color="primary" mat-raised-button matStepperPrevious><b>Anterior</b></button>
+                                <button color="primary" mat-raised-button matStepperNext><b>Siguiente</b></button>
                             </div>
                         </div>
                     </mat-step>
                     <mat-step label="Personal">
-                        <div class="tab-pane" id="datos">
+                        <div class="tab-pane" id="personal">
                             <div class="row justify-content-center">
                                 <h4 class="col-sm-12 d-flex justify-content-center"> Carga tus datos personales </h4>
                                 <div class="col-sm-10">
                                     <div class="form-group">
-                                    <label>Nombre <small>(requerido)</small></label>
-                                    <input name="firstname" type="text" class="form-control" placeholder="Juan...">
+                                    <label><b>Nombre <small>(requerido)</small></b></label>
+                                    <input matInput name="firstname" type="text" class="form-control" placeholder="Juan..." required />
                                     </div>
                                     <div class="form-group">
-                                    <label>Apellido <small>(requerido)</small></label>
-                                    <input name="apellido" type="text" class="form-control" placeholder="Lopez...">
+                                    <label><b>Apellido <small>(requerido)</small></b></label>
+                                    <input matInput name="apellido" type="text" class="form-control" placeholder="Lopez..." required />
                                     </div>
                                     <div class="form-group">
-                                        <label>DNI<small>(requerido)</small></label>
-                                        <input name="dni" type="text" class="form-control" placeholder="30555888">
+                                        <label><b>DNI <small>(requerido)</small></b></label>
+                                        <input matInput name="dni" type="text" class="form-control" placeholder="30555888" required />
                                     </div>
                                     <div class="form-group">
-                                        <label>CUIL/CUIT<small>(requerido)</small></label>
-                                        <input name="cuilcuit" type="text" class="form-control" placeholder="20-30555888-3">
+                                        <label><b>CUIL/CUIT <small>(requerido)</small></b></label>
+                                        <input matInput name="cuilcuit" type="text" class="form-control" placeholder="20-30555888-3" required />
                                     </div>
                                     <div class="form-group">
-                                        <label>Fecha nacimiento<small>(requerido)</small></label>
-                                        <input name="cuilcuit" type="date" class="form-control" placeholder="15/05/1990">
+                                        <label><b>Fecha nacimiento<small>(requerido)</small></b></label>
+                                        <input matInput name="cuilcuit" type="date" class="form-control" placeholder="15/05/1990" required />
                                     </div>
                                     <div class="form-group">
-                                        <label>Numero de telefono<small>(requerido)</small></label>
-                                        <input name="tel" type="text" class="form-control" placeholder="3514539962">
+                                        <label><b>Numero de telefono <small>(requerido)</small></b></label>
+                                        <input matInput name="tel" type="text" class="form-control" placeholder="3514539962" required />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <button mat-button matStepperPrevious>Anterior</button>
-                            <button mat-button matStepperNext>Siguiente</button>
+                        <div class="row justify-content-center">
+                            <button color="primary" mat-raised-button matStepperPrevious><b>Anterior</b></button>
+                            <button color="primary" mat-raised-button matStepperNext><b>Siguiente</b></button>
                         </div>
                     </mat-step>
                     <mat-step label="Direccion">
                         <div class="tab-pane" id="direccion">
                             <div class="row justify-content-center">
-                                <div class="col-sm-10">
-                                    <h4 class="col-sm-10 d-flex justify-content-center"> Cuentanos donde vives </h4>
-                                    <h6 class="col-sm-10 d-flex justify-content-center">(informacion necesaria si desea una tarjeta)</h6>
+                                <div class="col-sm-12">
+                                    <h4 class="col-sm-12 d-flex justify-content-center"> Cuentanos donde vives </h4>
+                                    <h6 class="col-sm-12 d-flex justify-content-center">(informacion necesaria si desea una tarjeta)</h6>
                                 </div>
                                 <div class="col-sm-6 col-sm-offset-1">
                                     <div class="form-group">
-                                        <label>Calle</label>
+                                        <label><b>Calle</b></label>
                                         <input type="text" class="form-control" placeholder="Av Peron">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                      <div class="form-group">
-                                        <label>Altura</label>
+                                        <label><b>Altura</b></label>
                                         <input type="text" class="form-control" placeholder="242">
                                       </div>
                                 </div>
@@ -105,37 +116,37 @@
                                 </div>
                                 <div class="col-sm-3 col-sm-offset-1">
                                     <div class="form-group">
-                                       <label>piso</label>
+                                       <label><b>piso</b></label>
                                        <input type="text" class="form-control" placeholder="5">
                                      </div>
                                </div>
                                <div class="col-sm-3 col-sm-offset-1">
                                     <div class="form-group">
-                                        <label>puerta</label>
+                                        <label><b>puerta</b></label>
                                         <input type="text" class="form-control" placeholder="b">
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-sm-offset-1">
                                     <div class="form-group">
-                                       <label>Barrio</label>
+                                       <label><b>Barrio</b></label>
                                        <input type="text" class="form-control" placeholder="Alberdi">
                                     </div>
                                </div>
                                 <div class="col-sm-3 col-sm-offset-1">
                                      <div class="form-group">
-                                        <label>Ciudad</label>
+                                        <label><b>Ciudad</b></label>
                                         <input type="text" class="form-control" placeholder="Rio Cuarto">
                                       </div>
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-1">
                                     <div class="form-group">
-                                       <label>Provincia</label>
+                                       <label><b>Provincia</b></label>
                                        <input type="text" class="form-control" placeholder="Cordoba">
                                      </div>
                                </div>
                                 <div class="col-sm-6 col-sm-offset-1">
                                      <div class="form-group">
-                                        <label>Pais</label><br>
+                                        <label><b>Pais</b></label><br>
                                          <select name="Pais" class="form-control">
                                             <option value="Argentina"> Argentina </option>
                                             <option value="Brasil"> Brasil </option>
@@ -147,15 +158,31 @@
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-1">
                                     <div class="form-group">
-                                       <label>Codigo Postal</label>
+                                       <label><b>Codigo Postal</b></label>
                                        <input type="int" class="form-control" placeholder="5800">
                                      </div>
                                </div>
                             </div>
                         </div>
-                        <div>
-                            <button mat-button matStepperPrevious>Anterior</button>
-                            <button mat-button>Registrar Cuenta</button>
+                        <div class="row justify-content-center">
+                            <button color="primary" mat-raised-button matStepperPrevious><b>Anterior</b></button>
+                            <button color="warn" mat-raised-button type="submit"><b>Registrar Cuenta</b></button>
+                            <!--<button color="warn" type="submit"  [disabled]="f.invalid">Submit</button>-->
+                        </div>
+                    </mat-step>
+                    <mat-step label="Listo">
+                        <div class="tab-pane" id="listo">
+                            <div class="row justify-content-center">
+                                <h4 class="col-sm-12 d-flex justify-content-center"> ¡Tu cuenta fue creada correctamente!</h4>
+                                <div class="col-sm-10 col-sm-offset-1 ">
+                                    <div>
+                                        <h6 class="col-sm-12 d-flex justify-content-center">Te agradecemos por elegirnos.</h6>
+                                    </div>
+                                    <div>
+                                        <h6 class="col-sm-12 d-flex justify-content-center">Haz click <a [routerLink]="['/login']">AQUI</a> para iniciar sesion</h6>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </mat-step>
 
