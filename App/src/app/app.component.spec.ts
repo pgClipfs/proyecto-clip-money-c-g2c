@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'clipMoneyAngular'`, () => {
+  it(`should have as title 'App'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('clipMoneyAngular');
+    expect(app.title).toEqual('App');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('clipMoneyAngular app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('App app is running!');
   });
 });

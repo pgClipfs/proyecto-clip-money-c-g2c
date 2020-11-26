@@ -1,45 +1,49 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
-
-import { RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
-import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './login/login.component';
-
-
-
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './Authentication/token-interceptor.service';
+//import { RouterModule } from '@angular/router';
+//import { AuthGuardService } from './Authentication/auth-guard.service';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     AppComponent,
-    NavbarComponent,
-    HomeComponent,
+    LoginComponent,
     RegisterComponent,
-    LoginComponent
-        
+    HomeComponent,
+    HeaderComponent,
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [
-    MaterialModule,
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      {path:'',component:LoginComponent},
-      {path:'home',component:HomeComponent},
-      {path:'register',component:RegisterComponent},
-      {path:'login',component:LoginComponent}
-    ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MaterialModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    TokenInterceptorService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

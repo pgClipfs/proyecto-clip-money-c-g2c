@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using clipMoney.Controllers;
 
 namespace clipMoney
 {
@@ -13,6 +14,10 @@ namespace clipMoney
 
             // Rutas de API web
             config.MapHttpAttributeRoutes();
+
+            config.EnableCors();
+
+            config.MessageHandlers.Add(new TokenValidationHandler());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
