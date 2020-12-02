@@ -1,0 +1,31 @@
+<p>usuarios works!</p>
+<button type="button" class="btn btn-success" (click)="UsuarioAlert()">Success</button>
+
+<p>begin of usuarios list</p>
+<ul *ngFor="let usuario of usuarios">
+  <li>{{usuario.Nombre}}</li>
+  <li>{{usuario.Apellido}}</li>
+  <li>{{usuario.IdUsuario}}</li>
+</ul>
+<div class="row">
+  <div class="col">
+    <table class="table mt-3 table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Nombre</th>
+          <th>Gestión</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let persona of usuarios;"
+          (click)="onSelect(persona)">
+              <td>{{persona.Apellido}}</td>
+              <td>{{persona.Nombre}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+<p>end of usuarios comp</p>
+
