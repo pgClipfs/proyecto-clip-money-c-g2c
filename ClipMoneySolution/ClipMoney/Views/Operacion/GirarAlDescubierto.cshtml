@@ -1,0 +1,49 @@
+﻿@model ClipMoney.Models.GiroAlDescubierto
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <br />
+    <h4>Formulario depositar</h4>
+    <form action="/Operacion/Depositar" method="post">
+        <input type="text" name="monto" value="" />
+        @*<input type="text" name="cvu" value="" />*@
+        <input type="text" name="idCuenta" value="" />
+        <input type="submit" name="name" value="Insert" />
+    </form>
+    <br />
+    <h4>Formulario extraccion</h4>
+    <form action="/Operacion/Extraer" method="post">
+        <input type="text" name="monto" value="" />
+        @*<input type="text" name="cvu" value="" />*@
+        <input type="text" name="idCuenta" value="" />
+        <input type="submit" name="name" value="Insert" />
+    </form>
+    <br />
+    <h4>Formulario transferencia</h4>
+    <form action="/Operacion/Transferir" method="post">
+        <input type="text" name="monto" value="" />
+        <input type="text" name="cvu" value="" />
+        <input type="text" name="idCuenta" value="" />
+        <input type="submit" name="name" value="Insert" />
+    </form>
+    <h3>Operacion exitosa, giraste al descubierto $@Model.Monto en la cuenta con ID = @Model.IdCuenta</h3>
+    <br />
+    <h4>Formulario giro al descubierto</h4>
+    <form action="/Operacion/GirarAlDescubierto" method="post">
+        <input type="text" name="monto" value="" />
+        <input type="text" name="idCuenta" value="" />
+        <input type="submit" name="name" value="Insert" />
+    </form>
+    <br />
+    <h4>Formulario ultimos movimientos</h4>
+    <form action="/Operacion/ObtenerUltimosMovimientos" method="get">
+        <input type="text" name="idCuenta" value="" />
+        <input type="submit" name="name" value="Insert" />
+    </form>
+</div>
+
+
