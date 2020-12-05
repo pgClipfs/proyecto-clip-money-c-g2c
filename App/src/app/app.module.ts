@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './Authentication/token-interceptor.service';
+import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
 //import { RouterModule } from '@angular/router';
 //import { AuthGuardService } from './Authentication/auth-guard.service';
 
@@ -25,7 +27,9 @@ import { TokenInterceptorService } from './Authentication/token-interceptor.serv
     HomeComponent,
     HeaderComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    RecuperarPasswordComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,
