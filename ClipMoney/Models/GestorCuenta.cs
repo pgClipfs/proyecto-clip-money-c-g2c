@@ -155,5 +155,26 @@ namespace ClipMoney.Models
                 comm.ExecuteNonQuery();
             }
         }
+        public decimal ConsultarSaldo(long cvu)
+        {
+            decimal saldo = 0;
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand("select saldo from cuentas where cvu = @cvu", conn);
+                //comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@cvu", cvu));
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    saldo = dr.GetDecimal(0);
+                }
+                dr.Close();
+            }
+
+            return saldo;
+        }
     }
 }
