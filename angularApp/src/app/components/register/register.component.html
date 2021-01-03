@@ -10,15 +10,15 @@
 
                 <div class="col-sm-12 col-sm-offset-2">
                 <mat-horizontal-stepper class="card wizard-card">
-                    <mat-step label="Cuenta">
-                        <form class="tab-pane" id="cuenta">
+                    <form class="tab-pane" id="cuenta">
+                        <mat-step label="Cuenta">
                             <div class="row justify-content-center">
                                 <h4 class="col-sm-12 d-flex justify-content-center"> Comencemos con la informacion basica de tu cuenta</h4>
                                 <div class="col-sm-5 col-sm-offset-1">
                                    <div class="picture-container">
                                         <div class="picture">
                                             <img class="picture-src" id="wizardPicturePreview" title=""/>
-                                            <input type="file" id="wizard-picture" class="form-control" required>
+                                            <input type="file" id="wizard-picture" class="form-control">
                                         </div>
                                         <h6>Sube una foto del frente de tu DNI</h6>
                                     </div>
@@ -27,7 +27,7 @@
                                     <div class="picture-container">
                                          <div class="picture">
                                              <img class="picture-src" id="wizardPicturePreview" title=""/>
-                                             <input type="file" id="wizard-picture" class="form-control" required>
+                                             <input type="file" id="wizard-picture" class="form-control">
                                          </div>
                                          <h6>Sube una foto del reverso de tu DNI</h6>
                                      </div>
@@ -45,16 +45,31 @@
                                       <label><b>Repita su contraseña <small>(requerido)</small></b></label>
                                       <input matInput name="repita-contraseña" type="text" class="form-control" placeholder="Abcd1234" required minlength="8">
                                   </div>
+                                    <div class="form-group">
+                                        <label><b>Elija una pregunta de seguridad</b><small>(requerido. Se le requerirá en caso de solicitar recuperacion de contraseña)</small></label><br>
+                                        <select name="Pregunta" class="form-control" required>
+                                            <option value="1"> ¿Nombre de la mascota de la infancia? </option>
+                                            <option value="2"> ¿Apodo en la escuela? </option>
+                                            <option value="3"> ¿A donde me gustaria viajar? </option>
+                                            <option value="4"> ¿De chico queria ser? </option>
+                                            <option value="5"> ¿Lo primero que compre con mi primer sueldo fue...? </option>
+                                            <option value="6"> ¿Libro preferido? </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label><b>Respuesta <small>(requerido)</small></b></label>
+                                        <input matInput name="respuesta" type="text" class="form-control" required>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
                                 <button color="primary" mat-raised-button matStepperPrevious><b>Anterior</b></button>
                                 <button color="primary" mat-raised-button matStepperNext><b>Siguiente</b></button>
                             </div>
-                        </form>
-                    </mat-step>
-                    <mat-step label="Personal">
-                        <form class="tab-pane" id="personal">
+
+                        </mat-step>
+                        <mat-step label="Personal">
+
                             <div class="row justify-content-center">
                                 <h4 class="col-sm-12 d-flex justify-content-center"> Carga tus datos personales </h4>
                                 <div class="col-sm-10">
@@ -67,12 +82,12 @@
                                     <input matInput name="apellido" type="text" class="form-control" placeholder="Lopez..." required >
                                     </div>
                                     <div class="form-group">
-                                        <label><b>DNI <small>(requerido)</small></b></label>
-                                        <input matInput name="dni" type="text" class="form-control" placeholder="30555888" required>
+                                        <label><b>DNI</b></label>
+                                        <input matInput name="dni" type="text" class="form-control" placeholder="30555888">
                                     </div>
                                     <div class="form-group">
-                                        <label><b>CUIL/CUIT <small>(requerido)</small></b></label>
-                                        <input matInput name="cuilcuit" type="text" class="form-control" placeholder="20-30555888-3" required>
+                                        <label><b>CUIL/CUIT</b></label>
+                                        <input matInput name="cuilcuit" type="text" class="form-control" placeholder="20-30555888-3">
                                     </div>
                                     <div class="form-group">
                                         <label><b>Fecha nacimiento<small>(requerido)</small></b></label>
@@ -88,11 +103,10 @@
                                 <button color="primary" mat-raised-button matStepperPrevious><b>Anterior</b></button>
                                 <button color="primary" mat-raised-button matStepperNext><b>Siguiente</b></button>
                             </div>
-                        </form>
-                        
-                    </mat-step>
-                    <mat-step label="Direccion">
-                        <form class="tab-pane" id="direccion">
+
+                        </mat-step>
+                        <mat-step label="Direccion">
+
                             <div class="row justify-content-center">
                                 <div class="col-sm-12">
                                     <h4 class="col-sm-12 d-flex justify-content-center"> Cuentanos donde vives </h4>
@@ -146,7 +160,7 @@
                                      </div>
                                </div>
                                 <div class="col-sm-6 col-sm-offset-1">
-                                     <div class="form-group">
+                                    <div class="form-group">
                                         <label><b>Pais</b></label><br>
                                          <select name="Pais" class="form-control">
                                             <option value="Argentina"> Argentina </option>
@@ -155,7 +169,7 @@
                                             <option value="Uruguay"> Uruguay </option>
                                             <option value="otro">otro...</option>
                                         </select>
-                                      </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-4 col-sm-offset-1">
                                     <div class="form-group">
@@ -168,9 +182,9 @@
                                 <button color="primary" mat-raised-button matStepperPrevious><b>Anterior</b></button>
                                 <button color="warn" mat-raised-button type="submit"><b>Registrar Cuenta</b></button>
                             </div>
-                        </form>
-                        
-                    </mat-step>
+
+                        </mat-step>
+                    </form>
                     <mat-step label="Listo">
                         <div class="tab-pane" id="listo">
                             <div class="row justify-content-center">
