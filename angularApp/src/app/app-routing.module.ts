@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { NewPasswordComponent } from './components/new-password/new-password.component';
+import { MovimientosComponent } from './components/movimientos/movimientos.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'new-password',
     component: NewPasswordComponent,
+  },
+  {
+    path:'movimientos',
+    component: MovimientosComponent,
   },
   {
     path: '**', 

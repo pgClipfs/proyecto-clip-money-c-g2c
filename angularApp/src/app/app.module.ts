@@ -27,6 +27,7 @@ import { NewPasswordComponent } from './components/new-password/new-password.com
 import { LandingComponent } from './components/landing/landing.component';
 import { NavbarLandingComponent } from './components/navbar-landing/navbar-landing.component';
 import { MaterialModule } from './components/material/material.module';
+import { MovimientosComponent } from './components/movimientos/movimientos.component';
 //import from {JwtHelperService} from '@auth0/angular-jwt';
 
 
@@ -42,7 +43,8 @@ import { MaterialModule } from './components/material/material.module';
     RecuperarPasswordComponent,
     UsuariosComponent,
     RegisterComponent,
-    LandingComponent
+    LandingComponent,
+    MovimientosComponent
   ],
   imports: [
     BrowserModule,
