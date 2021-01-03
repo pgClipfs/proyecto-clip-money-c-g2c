@@ -149,6 +149,7 @@
     <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OperacionController.cs" />
     <Compile Include="Controllers\TokenGenerator.cs" />
     <Compile Include="Controllers\TokenValidationHandler.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -156,10 +157,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cuenta.cs" />
+    <Compile Include="Models\Deposito.cs" />
     <Compile Include="Models\GestorCuenta.cs" />
     <Compile Include="Models\GestorLogin.cs" />
     <Compile Include="Models\GestorUsuario.cs" />
     <Compile Include="Models\LoginRequest.cs" />
+    <Compile Include="Models\OperacionBase.cs" />
+    <Compile Include="Models\ParametroParaDeposito.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
