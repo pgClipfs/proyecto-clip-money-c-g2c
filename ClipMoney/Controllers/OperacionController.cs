@@ -42,5 +42,15 @@ namespace ClipMoney.Controllers
         public void Delete(int id)
         {
         }
+
+
+        // GET: api/Operation/UltimosMovimientos/1
+        [AllowAnonymous]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public List<Operacion> UltimosMovimientos(int id)
+        {
+            GestorOperaciones gestorOperaciones = new GestorOperaciones();
+            return gestorOperaciones.ObtenerUltimosMovimientos(id);
+        }
     }
 }

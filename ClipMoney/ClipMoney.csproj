@@ -159,8 +159,10 @@
     <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Models\GestorCuenta.cs" />
     <Compile Include="Models\GestorLogin.cs" />
+    <Compile Include="Models\GestorOperaciones.cs" />
     <Compile Include="Models\GestorUsuario.cs" />
     <Compile Include="Models\LoginRequest.cs" />
+    <Compile Include="Models\Operacion.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
