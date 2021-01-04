@@ -18,7 +18,7 @@ namespace ClipMoney.Models
         private int cuilCuit;
         private string telefono;
         private string calle;
-        private int numeroDeCalle;
+        private string numeroDeCalle;
         private bool departamento; //use Nullable type ?
         private int piso;
         private string puerta;
@@ -36,7 +36,7 @@ namespace ClipMoney.Models
             this.apellido = apellido;
         }
 
-        public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, int localidad)
+        public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, string numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, int localidad)
         {
             this.idUsuario = idUsuario;
             this.nombre = nombre;
@@ -69,7 +69,7 @@ namespace ClipMoney.Models
         public int CuilCuit { get => cuilCuit; set => cuilCuit = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Calle { get => calle; set => calle = value; }
-        public int NumeroDeCalle { get => numeroDeCalle; set => numeroDeCalle = value; }
+        public string NumeroDeCalle { get => numeroDeCalle; set => numeroDeCalle = value; }
         public bool Departamento { get => departamento; set => departamento = value; }
         public int Piso { get => piso; set => piso = value; }
         public string Puerta { get => puerta; set => puerta = value; }

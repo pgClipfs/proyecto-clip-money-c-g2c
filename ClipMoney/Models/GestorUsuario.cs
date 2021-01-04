@@ -153,6 +153,31 @@ namespace ClipMoney.Models
             }
         }
 
+        public void ModificarDatosPersonales(Usuario usuario)
+        {
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "dbo.proc_modificar_datos_personales";
+                comm.Connection = conn;
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@idUsuario", usuario.IdUsuario));
+                comm.Parameters.Add(new SqlParameter("@email", usuario.Email));
+                comm.Parameters.Add(new SqlParameter("@telefono", usuario.Telefono));
+                comm.Parameters.Add(new SqlParameter("@calle", usuario.Calle));
+                comm.Parameters.Add(new SqlParameter("@numero_calle", usuario.NumeroDeCalle));
+                comm.Parameters.Add(new SqlParameter("@departamento", usuario.Departamento));
+                comm.Parameters.Add(new SqlParameter("@piso", usuario.Piso));
+                comm.Parameters.Add(new SqlParameter("@puerta", usuario.Puerta));
+                comm.Parameters.Add(new SqlParameter("@barrio", usuario.Barrio));
+                comm.Parameters.Add(new SqlParameter("@codigo_postal", usuario.CodigoPostal));
+                comm.Parameters.Add(new SqlParameter("@localidad", usuario.Localidad));
+                comm.ExecuteNonQuery();
+            }
+        }
+
+
         public void EliminarUsuario(int id)//Cambiar por desactivar cuenta o usuario
         {
             using (SqlConnection conn = new SqlConnection(StrConn))

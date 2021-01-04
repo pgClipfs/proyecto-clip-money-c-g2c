@@ -48,7 +48,7 @@ namespace ClipMoney.Controllers
         public void Put([FromBody] Usuario usuario)
         {
             GestorUsuario gestorUsuario = new GestorUsuario();
-            gestorUsuario.ModificarUsuario(usuario);
+            gestorUsuario.ModificarDatosPersonales(usuario);
         }
 
         // DELETE: api/Usuario/5
