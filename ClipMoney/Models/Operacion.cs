@@ -9,7 +9,7 @@ namespace ClipMoney.Models
     {
         private int id;
         private DateTime fecha;
-        private double monto;
+        private decimal monto;
         private long cbu;
         private int tipoOperacion;
         private string nombreOperacion;
@@ -19,7 +19,7 @@ namespace ClipMoney.Models
         {
         }
 
-        public Operacion(int id, DateTime fecha, double monto, long cbu, int tipoOperacion, string nombreOperacion, long idCuenta)
+        public Operacion(int id, DateTime fecha, decimal monto, long cbu, int tipoOperacion, string nombreOperacion, long idCuenta)
         {
             this.Id = id;
             this.Fecha = fecha;
@@ -32,7 +32,7 @@ namespace ClipMoney.Models
 
         public int Id { get => id; set => id = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
-        public double Monto { get => monto; set => monto = value; }
+        public decimal Monto { get => monto; set => monto = value; }
         public long Cbu { get => cbu; set => cbu = value; }
         public int TipoOperacion { get => tipoOperacion; set => tipoOperacion = value; }
         public string NombreOperacion { get => nombreOperacion; set => nombreOperacion = value; }
