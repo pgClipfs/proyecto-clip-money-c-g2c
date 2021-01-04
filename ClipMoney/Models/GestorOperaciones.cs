@@ -9,35 +9,37 @@ namespace ClipMoney.Models
 {
     public class GestorOperaciones
     {
-        static string strConn = ConfigurationManager.ConnectionStrings["BDLocal"].ConnectionString;
+        static string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ConnectionString;
         
 
         public List<Operacion> ObtenerUltimosMovimientos(long cvu)
         {
             List<Operacion> movimientos = new List<Operacion>();
-            SqlConnection conn = new SqlConnection(strConn);
-            conn.Open();
-            SqlCommand comm = new SqlCommand("dbo.proc_last_movements", conn);
-            comm.CommandType = System.Data.CommandType.StoredProcedure;
-            comm.Parameters.Add(new SqlParameter("@id_account", cvu));
-            SqlDataReader dr = comm.ExecuteReader();
-            while (dr.Read())
+            using (SqlConnection conn = new SqlConnection(StrConn))
             {
-                int id=dr.GetInt16(0);
-                DateTime fecha =dr.GetDateTime(1);
-                decimal monto=dr.GetDecimal(2);
-                long cbu=0;
-                if (!dr.IsDBNull(3))
+                conn.Open();
+                SqlCommand comm = new SqlCommand("dbo.proc_last_movements", conn);
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@id_account", cvu));
+                SqlDataReader dr = comm.ExecuteReader();
+                while (dr.Read())
                 {
-                    cbu = dr.GetInt64(3);
+                    int id = dr.GetInt16(0);
+                    DateTime fecha = dr.GetDateTime(1);
+                    decimal monto = dr.GetDecimal(2);
+                    long cbu = 0;
+                    if (!dr.IsDBNull(3))
+                    {
+                        cbu = dr.GetInt64(3);
+                    }
+                    int tipoOperacion = dr.GetInt16(4);
+                    string nombreOperacion = dr.GetString(5);
+                    long idCuenta = dr.GetInt64(6);
+                    Operacion operacion = new Operacion(id, fecha, monto, cbu, tipoOperacion, nombreOperacion, idCuenta);
+                    movimientos.Add(operacion);
                 }
-                int tipoOperacion=dr.GetInt16(4);
-                string nombreOperacion=dr.GetString(5);
-                long idCuenta=dr.GetInt64(6);
-                Operacion operacion = new Operacion(id, fecha, monto, cbu, tipoOperacion, nombreOperacion, idCuenta);
-                movimientos.Add(operacion);
+                dr.Close();
             }
-            dr.Close();
             return movimientos;
         }
     }
