@@ -8,6 +8,7 @@ import { RecuperarPasswordComponent } from './components/recuperar-password/recu
 import { NewPasswordComponent } from './components/new-password/new-password.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { RecuperarCuentaComponent } from './components/recuperar-cuenta/recuperar-cuenta.component';
+import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,11 @@ const routes: Routes = [
     component: RecuperarCuentaComponent,
   },
   {
-    path: '**', 
+    path:'modificar-datos',
+    component: ModificarDatosComponent,
+  },
+  {
+    path: '**',
     redirectTo: '',
   }
 ];

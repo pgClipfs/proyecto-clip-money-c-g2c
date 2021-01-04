@@ -29,6 +29,7 @@ import { NavbarLandingComponent } from './components/navbar-landing/navbar-landi
 import { MaterialModule } from './components/material/material.module';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { RecuperarCuentaComponent } from './components/recuperar-cuenta/recuperar-cuenta.component';
+import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
 //import from {JwtHelperService} from '@auth0/angular-jwt';
 
 
@@ -46,8 +47,10 @@ import { RecuperarCuentaComponent } from './components/recuperar-cuenta/recupera
     RegisterComponent,
     LandingComponent,
     MovimientosComponent,
-    RecuperarCuentaComponent
+    RecuperarCuentaComponent,
+    ModificarDatosComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -69,7 +72,7 @@ import { RecuperarCuentaComponent } from './components/recuperar-cuenta/recupera
       useClass: AuthInterceptorService,
       multi: true
     }
-  ], //this is needed?
+  ], //this is needed? sí, acá le estamos diciendo al AppModule que prepare el AppComponent como primer componente a ejecutar.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
