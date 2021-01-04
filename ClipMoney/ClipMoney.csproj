@@ -165,6 +165,7 @@
     <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Models\Operacion.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

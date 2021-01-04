@@ -32,6 +32,42 @@ namespace ClipMoney.Models
             return u;
         }
 
+        public UsuarioDTO ObtenerDatosPersonales(int id)
+        {
+            UsuarioDTO usuario = null;
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand("dbo.proc_obtener_usuario_porID", conn);
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@id", id));
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    string nombre = dr.GetString(0);
+                    string apellido = dr.GetString(1);
+                    int dni = dr.GetInt32(2);
+                    string email = dr.GetString(3);
+                    DateTime fechaDeNacimiento = dr.GetDateTime(4);
+                    long cuilCuit = dr.GetInt64(5);
+                    string telefono = dr.GetString(6);
+                    string calle = dr.GetString(7);
+                    string numeroDeCalle = dr.GetString(8);
+                    bool departamento = dr.GetBoolean(9);
+                    int piso = dr.GetInt16(10);
+                    string puerta = dr.GetString(11);
+                    string barrio = dr.GetString(12);
+                    string codigoPostal = dr.GetString(16);
+                    string localidad = dr.GetString(13);
+                    string provincia = dr.GetString(14);
+                    string pais = dr.GetString(15);
+                    usuario = new UsuarioDTO(id,nombre,apellido,dni,email,fechaDeNacimiento,cuilCuit,telefono,calle,numeroDeCalle,departamento,piso,puerta,barrio,codigoPostal,localidad,provincia,pais);
+                }
+                dr.Close();
+            }
+            return usuario;
+        }
+
         public List<Usuario> ObtenerUsuarios()
         {
             List<Usuario> lista = new List<Usuario>();

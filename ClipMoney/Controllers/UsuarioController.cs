@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 
 namespace ClipMoney.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [RoutePrefix("api/usuario")]
     public class UsuarioController : ApiController
     {
@@ -26,10 +26,10 @@ namespace ClipMoney.Controllers
 
         // GET: api/Usuario/5
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        public Usuario Get(int id)
+        public UsuarioDTO Get(int id)
         {
             GestorUsuario gestorUsuario = new GestorUsuario();
-            return gestorUsuario.ObtenerPorId(id);
+            return gestorUsuario.ObtenerDatosPersonales(id);
         }
 
         // POST: api/Usuario
