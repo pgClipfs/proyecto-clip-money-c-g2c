@@ -5,44 +5,36 @@ using System.Web;
 
 namespace ClipMoney.Models
 {
-    public class Usuario
+    public class UsuarioDTO
     {
         private int idUsuario;
         private string nombre;
         private string apellido;
-        private string fotoFrenteDni;
-        private string fotoReversoDni;
         private int dni;
         private string email;
         private DateTime fechaDeNacimiento;
-        private int cuilCuit;
+        private long cuilCuit;
         private string telefono;
         private string calle;
         private string numeroDeCalle;
-        private bool departamento; //use Nullable type ?
+        private bool departamento;
         private int piso;
         private string puerta;
         private string barrio;
         private string codigoPostal;
-        private int localidad;
+        private string localidad;
+        private string provincia;
+        private string pais;
 
-        public Usuario()
+        public UsuarioDTO()
         {
-
-        }
-        public Usuario(string nombre, string apellido)//constructor temporal para simplificar el proceso de construccion de controlador de usuario
-        {
-            this.nombre = nombre;
-            this.apellido = apellido;
         }
 
-        public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, string numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, int localidad)
+        public UsuarioDTO(int idUsuario, string nombre, string apellido, int dni, string email, DateTime fechaDeNacimiento, long cuilCuit, string telefono, string calle, string numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, string localidad, string provincia, string pais)
         {
             this.idUsuario = idUsuario;
             this.nombre = nombre;
             this.apellido = apellido;
-            this.fotoFrenteDni = fotoFrenteDni;
-            this.fotoReversoDni = fotoReversoDni;
             this.dni = dni;
             this.email = email;
             this.fechaDeNacimiento = fechaDeNacimiento;
@@ -56,17 +48,17 @@ namespace ClipMoney.Models
             this.barrio = barrio;
             this.codigoPostal = codigoPostal;
             this.localidad = localidad;
+            this.provincia = provincia;
+            this.pais = pais;
         }
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
-        public string FotoFrenteDni { get => fotoFrenteDni; set => fotoFrenteDni = value; }
-        public string FotoReversoDni { get => fotoReversoDni; set => fotoReversoDni = value; }
         public int Dni { get => dni; set => dni = value; }
         public string Email { get => email; set => email = value; }
         public DateTime FechaDeNacimiento { get => fechaDeNacimiento; set => fechaDeNacimiento = value; }
-        public int CuilCuit { get => cuilCuit; set => cuilCuit = value; }
+        public long CuilCuit { get => cuilCuit; set => cuilCuit = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Calle { get => calle; set => calle = value; }
         public string NumeroDeCalle { get => numeroDeCalle; set => numeroDeCalle = value; }
@@ -75,6 +67,8 @@ namespace ClipMoney.Models
         public string Puerta { get => puerta; set => puerta = value; }
         public string Barrio { get => barrio; set => barrio = value; }
         public string CodigoPostal { get => codigoPostal; set => codigoPostal = value; }
-        public int Localidad { get => localidad; set => localidad = value; }
+        public string Localidad { get => localidad; set => localidad = value; }
+        public string Provincia { get => provincia; set => provincia = value; }
+        public string Pais { get => pais; set => pais = value; }
     }
 }
