@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ClipMoney.Models
 {
-    public class OperacionBase
+    public class Operacion
     {
         private int idOperacion;
         private DateTime fechaDeOperacion;
@@ -14,12 +16,17 @@ namespace ClipMoney.Models
         private int tipoDeOperacion;
         private long idCuenta;
 
-        public OperacionBase()
+        public Operacion()
         {
 
         }
 
-        public OperacionBase(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, long idCuenta)
+        public Operacion(decimal monto, int idOperacion)
+        {
+
+        }
+
+        public Operacion(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, long idCuenta)
         {
             this.idOperacion = idOperacion;
             this.fechaDeOperacion = fechaDeOperacion;
@@ -36,7 +43,21 @@ namespace ClipMoney.Models
         public long IdCuenta { get => idCuenta; set => idCuenta = value; }
         public Nullable<long> CvuCbuDestino { get => cvuCbuDestino; set => cvuCbuDestino = value; }
 
-        //public abstract void Operar(decimal monto, int idCuenta); comentado porque las clases derivadas toman distintos parámetros
+        public void Depositar()
+        {
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "dbo.proc_make_deposit";
+                comm.Connection = conn;
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@monto", this.Monto));
+                comm.Parameters.Add(new SqlParameter("@id_cuenta", this.IdCuenta));
+                comm.ExecuteNonQuery();
+            }
+        }
     }
 
 }

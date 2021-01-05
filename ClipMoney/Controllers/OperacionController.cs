@@ -28,22 +28,13 @@ namespace ClipMoney.Controllers
         // POST: api/Operation
         [AllowAnonymous]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        public void Post([FromBody] ParametroParaDeposito parametroParaDeposito)
+        public void Post([FromBody] Operacion operacionMontoId)
         {
-            Deposito deposito = new Deposito();
-            deposito.Monto = parametroParaDeposito.Monto;
-            deposito.IdCuenta = parametroParaDeposito.IdCuenta;
-            deposito.Depositar(parametroParaDeposito.Monto, parametroParaDeposito.IdCuenta);
-            //retornar id de la operacion?
+            Operacion operacion = new Operacion();
+            operacion.Monto = operacionMontoId.Monto;
+            operacion.IdCuenta = operacionMontoId.IdCuenta;
+            operacion.Depositar();
         }
-        //public void Post([FromBody] decimal monto, int id)
-        //{
-        //    Deposito deposito = new Deposito();
-        //    deposito.Monto = monto;
-        //    deposito.IdCuenta = id;
-        //    deposito.Depositar(monto, id);
-        //    //retornar id de la operacion?
-        //}
 
         // PUT: api/Operation/5
         public void Put(int id, [FromBody] string value)
