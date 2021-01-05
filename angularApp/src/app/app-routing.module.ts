@@ -8,6 +8,10 @@ import { RecuperarPasswordComponent } from './components/recuperar-password/recu
 import { NewPasswordComponent } from './components/new-password/new-password.component';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { RecuperarCuentaComponent } from './components/recuperar-cuenta/recuperar-cuenta.component';
+import { ActivarCuentaComponent } from './components/activar-cuenta/activar-cuenta.component';
+import { CuentaComponent } from './components/cuenta/cuenta.component';
+import { IngresoDineroComponent } from './components/ingreso-dinero/ingreso-dinero.component';
+import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dinero.component';
 
 const routes: Routes = [
   {
@@ -40,8 +44,24 @@ const routes: Routes = [
     component: NewPasswordComponent,
   },
   {
+    path:'cuenta',
+    component: CuentaComponent,
+  },
+  {
+    path:'activar-cuenta',
+    component: ActivarCuentaComponent,
+  },
+  {
     path:'movimientos',
     component: MovimientosComponent,
+  },
+  {
+    path:'ingreso-dinero',
+    component: IngresoDineroComponent,
+  },
+  {
+    path:'extraer-dinero',
+    component: ExtraerDineroComponent,
   },
   {
     path:'recuperar-cuenta',
