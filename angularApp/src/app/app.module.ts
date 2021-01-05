@@ -29,14 +29,13 @@ import { NavbarLandingComponent } from './components/navbar-landing/navbar-landi
 import { MaterialModule } from './components/material/material.module';
 import { MovimientosComponent } from './components/movimientos/movimientos.component';
 import { RecuperarCuentaComponent } from './components/recuperar-cuenta/recuperar-cuenta.component';
-<<<<<<< HEAD
 import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
-=======
 import { ActivarCuentaComponent } from './components/activar-cuenta/activar-cuenta.component';
 import { CuentaComponent } from './components/cuenta/cuenta.component';
 import { IngresoDineroComponent } from './components/ingreso-dinero/ingreso-dinero.component';
 import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dinero.component';
->>>>>>> adf7c2b9f513b5779216aea0860550eac61adb71
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
 //import from {JwtHelperService} from '@auth0/angular-jwt';
 
 
@@ -55,14 +54,13 @@ import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dine
     LandingComponent,
     MovimientosComponent,
     RecuperarCuentaComponent,
-<<<<<<< HEAD
     ModificarDatosComponent,
-=======
     ActivarCuentaComponent,
     CuentaComponent,
     IngresoDineroComponent,
-    ExtraerDineroComponent
->>>>>>> adf7c2b9f513b5779216aea0860550eac61adb71
+    ExtraerDineroComponent,
+    PerfilComponent,
+    ModificarDomicilioComponent
   ],
 
   imports: [
