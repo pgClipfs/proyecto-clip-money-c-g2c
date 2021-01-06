@@ -1,0 +1,151 @@
+<app-navbar></app-navbar>
+
+<div class="image-container">
+  <div class="container col-sm-10">
+    <div class="row">
+      <div class="col-sm-12 col-sm-offset-2">
+
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+          <div class="card wizard-card">
+            <form class="form-container">
+
+                <div class="wizard-header">
+                    <h3 class="col-sm-12 d-flex justify-content-center">
+                    <b>Datos de su perfil</b><br>
+                    </h3>
+                </div><br><br>
+                <div class="card text-center" style="margin-bottom: 5%;">
+                  <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills nav-justified" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#datospersonales">Datos personales</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#domicilio">Domicilio</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="tab-content">
+                  <div id="datospersonales" class="container tab-pane active">
+                    <div class="row justify-content-end">
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label for="nombre"><b>Nombre</b></label>
+                        <input type="text" id="nombre" class="form-control"  placeholder="Nombre" matInput formControlName="Nombre" required>
+                      </div>
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label for="apellido"><b>Apellido</b></label>
+                        <input type="text" id="apellido" class="form-control"  placeholder="Apellido" matInput formControlName="Apellido" required>
+                      </div>
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label for="usuario"><b>Usuario</b></label>
+                        <input type="text" id="usuario" class="form-control"  placeholder="Usuario" matInput formControlName="Usuario" required>
+                      </div>
+
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label><b>Tu CVU</b></label>
+                        <input matInput name="tel" type="text" class="form-control" placeholder="0983514476835278859" required>
+                      </div>
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label for="email"><b>Email<small>(requerido)</small></b></label>
+                        <input type="text" id="email" class="form-control"  placeholder="email@example.com" matInput formControlName="email" required>
+                      </div>
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label for="email"><b>Email alternativo</b></label>
+                        <input type="text" id="email" class="form-control"  placeholder="email@example.com" matInput formControlName="email" required>
+                      </div>
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label><b>Numero de telefono<small>(requerido)</small></b></label>
+                        <input matInput name="tel" type="text" class="form-control" placeholder="3514539962" required>
+                      </div>
+                      <div class="form-group col-sm-6 col-sm-offset-1">
+                        <label><b>Numero de telefono alternativo</b></label>
+                        <input matInput name="tel" type="text" class="form-control" placeholder="3514539962" required>
+                      </div>
+                      <div class="col-sm-4 col-sm-offset-1" style="align-content: center;">
+                        <button type="submit" class="btn btn-block center-block" class="btn btn-space" [routerLink]="['/modificar-datos']"><b>MODIFICAR DATOS PERSONALES</b></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="domicilio" class="container tab-pane fade">
+                    <div class="row justify-content-end">
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>Calle</b></label>
+                          <input type="text" class="form-control" placeholder="Av Peron">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>Altura</b></label>
+                          <input type="text" class="form-control" placeholder="242">
+                        </div>
+                      </div>
+                      <div class="checkbox col-sm-6 col-sm-offset-1">
+                        <label>
+                          <input type="checkbox"> <b>Vivo en un departamento</b>
+                        </label>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>piso</b></label>
+                          <input type="text" class="form-control" placeholder="5">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>puerta</b></label>
+                          <input type="text" class="form-control" placeholder="b">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>Barrio</b></label>
+                          <input type="text" class="form-control" placeholder="Alberdi">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>Ciudad</b></label>
+                          <input type="text" class="form-control" placeholder="Rio Cuarto">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>Provincia</b></label>
+                          <input type="text" class="form-control" placeholder="Cordoba">
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>Pais</b></label><br>
+                            <select name="Pais" class="form-control">
+                              <option value="Argentina"> Argentina </option>
+                              <option value="Brasil"> Brasil </option>
+                              <option value="Chile"> Chile </option>
+                              <option value="Uruguay"> Uruguay </option>
+                              <option value="otro">otro...</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <div class="form-group">
+                          <label><b>Codigo Postal</b></label>
+                          <input type="int" class="form-control" placeholder="5800">
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-sm-offset-1">
+                        <button type="submit" class="btn btn-block center-block" class="btn btn-space" [routerLink]="['/modificar-domicilio']"><b>MODIFICAR DOMICILIO</b></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
