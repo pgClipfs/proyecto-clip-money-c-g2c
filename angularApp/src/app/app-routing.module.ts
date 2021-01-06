@@ -12,6 +12,9 @@ import { ActivarCuentaComponent } from './components/activar-cuenta/activar-cuen
 import { CuentaComponent } from './components/cuenta/cuenta.component';
 import { IngresoDineroComponent } from './components/ingreso-dinero/ingreso-dinero.component';
 import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dinero.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
+import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
 
 const routes: Routes = [
   {
@@ -68,7 +71,19 @@ const routes: Routes = [
     component: RecuperarCuentaComponent,
   },
   {
-    path: '**', 
+    path:'modificar-datos',
+    component: ModificarDatosComponent,
+  },
+  {
+    path:'modificar-domicilio',
+    component: ModificarDomicilioComponent,
+  },
+  {
+    path:'perfil',
+    component: PerfilComponent,
+  },
+  {
+    path: '**',
     redirectTo: '',
   }
 ];
