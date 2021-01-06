@@ -1,7 +1,7 @@
 /* Encabezado */
 .main-header
 {
-    background: url(../../assets/img/bgenc.jpg);
+    background: url('../../../assets/img/backg.jpg');
     background-size: cover;
     min-height: 498px;
 }
