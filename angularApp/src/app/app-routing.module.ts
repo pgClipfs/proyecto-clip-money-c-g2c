@@ -13,8 +13,14 @@ import { ActivarCuentaComponent } from './components/activar-cuenta/activar-cuen
 import { CuentaComponent } from './components/cuenta/cuenta.component';
 import { IngresoDineroComponent } from './components/ingreso-dinero/ingreso-dinero.component';
 import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dinero.component';
+<<<<<<< HEAD
 import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+=======
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
+import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
+>>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
 
 const routes: Routes = [
   {
@@ -71,6 +77,13 @@ const routes: Routes = [
     component: RecuperarCuentaComponent,
   },
   {
+<<<<<<< HEAD
+=======
+    path:'perfil',
+    component: PerfilComponent,
+  },
+  {
+>>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
     path:'modificar-datos',
     component: ModificarDatosComponent,
   },
@@ -79,11 +92,15 @@ const routes: Routes = [
     component: ModificarDomicilioComponent,
   },
   {
+<<<<<<< HEAD
     path:'perfil',
     component: PerfilComponent,
   },
   {
     path: '**',
+=======
+    path: '**', 
+>>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
     redirectTo: '',
   }
 ];

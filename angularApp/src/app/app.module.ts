@@ -35,6 +35,10 @@ import { CuentaComponent } from './components/cuenta/cuenta.component';
 import { IngresoDineroComponent } from './components/ingreso-dinero/ingreso-dinero.component';
 import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dinero.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+<<<<<<< HEAD
+=======
+import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
+>>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
 import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
 //import from {JwtHelperService} from '@auth0/angular-jwt';
 
@@ -60,6 +64,10 @@ import { ModificarDomicilioComponent } from './components/modificar-domicilio/mo
     IngresoDineroComponent,
     ExtraerDineroComponent,
     PerfilComponent,
+<<<<<<< HEAD
+=======
+    ModificarDatosComponent,
+>>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
     ModificarDomicilioComponent
   ],
 
