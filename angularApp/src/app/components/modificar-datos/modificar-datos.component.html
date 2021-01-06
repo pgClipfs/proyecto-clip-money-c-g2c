@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+
+<div class="image-container">
+  <div class="container col-sm-10">
+    <div class="row">
+      <div class="col-sm-12 col-sm-offset-2">
+
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+          <div class="card wizard-card">
+            <form class="form-container">
+
+                <div class="wizard-header">
+                    <h3 class="col-sm-12 d-flex justify-content-center">
+                    <b>Modificar datos personales de su perfil</b><br>
+                    </h3>
+                </div><br><br>
+              <div class="row justify-content-center">
+                <div class="col-sm-5 col-sm-offset-1">
+                  <div class="picture-container">
+                       <div class="picture">
+                           <img class="picture-src" id="wizardPicturePreview" title=""/>
+                           <input type="file" id="wizard-picture" class="form-control">
+                       </div>
+                       <h6>Sube una foto del frente de tu DNI</h6>
+                   </div>
+               </div>
+               <div class="col-sm-5 col-sm-offset-1">
+                   <div class="picture-container">
+                        <div class="picture">
+                            <img class="picture-src" id="wizardPicturePreview" title=""/>
+                            <input type="file" id="wizard-picture" class="form-control">
+                        </div>
+                        <h6>Sube una foto del reverso de tu DNI</h6>
+                    </div>
+                </div>
+              </div>
+              <div class="row col-sm-12 col-sm-offset-1">
+                <div class="form-group col-sm-12 col-sm-offset-1">
+                  <label for="nombre"><b>Nombre</b></label>
+                  <input type="text" id="nombre" class="form-control"  placeholder="Nombre" matInput formControlName="Nombre" required>
+                </div>
+                <div class="form-group col-sm-12 col-sm-offset-1">
+                  <label for="apellido"><b>Apellido</b></label>
+                  <input type="text" id="apellido" class="form-control"  placeholder="Apellido" matInput formControlName="Apellido" required>
+                </div>
+                <div class="form-group col-sm-12 col-sm-offset-1">
+                  <label for="email"><b>Email</b></label>
+                  <input type="text" id="email" class="form-control"  placeholder="email@example.com" matInput formControlName="email" required>
+                </div>
+                <div class="form-group col-sm-12 col-sm-offset-1">
+                  <label><b>Fecha nacimiento<small>(requerido)</small></b></label>
+                  <input matInput name="cuilcuit" type="date" class="form-control" placeholder="15/05/1990" required>
+                </div>
+                <div class="form-group col-sm-12 col-sm-offset-1">
+                  <label><b>Numero de telefono <small>(requerido)</small></b></label>
+                  <input matInput name="tel" type="text" class="form-control" placeholder="3514539962" required>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-sm-offset-1">
+                <button type="submit" class="btn btn-block center-block"><b>MODIFICAR</b></button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
