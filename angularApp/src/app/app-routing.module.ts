@@ -13,14 +13,11 @@ import { ActivarCuentaComponent } from './components/activar-cuenta/activar-cuen
 import { CuentaComponent } from './components/cuenta/cuenta.component';
 import { IngresoDineroComponent } from './components/ingreso-dinero/ingreso-dinero.component';
 import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dinero.component';
-<<<<<<< HEAD
 import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-=======
-import { PerfilComponent } from './components/perfil/perfil.component';
-import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
-import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
->>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
+//import { PerfilComponent } from './components/perfil/perfil.component';
+//import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
+//import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
 
 const routes: Routes = [
   {
@@ -77,13 +74,10 @@ const routes: Routes = [
     component: RecuperarCuentaComponent,
   },
   {
-<<<<<<< HEAD
-=======
     path:'perfil',
     component: PerfilComponent,
   },
   {
->>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
     path:'modificar-datos',
     component: ModificarDatosComponent,
   },
@@ -92,17 +86,24 @@ const routes: Routes = [
     component: ModificarDomicilioComponent,
   },
   {
-<<<<<<< HEAD
     path:'perfil',
     component: PerfilComponent,
   },
   {
     path: '**',
-=======
-    path: '**', 
->>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
     redirectTo: '',
   }
+/*import { AppComponent } from './app.component'; //
+//import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { HeaderComponent } from './components/header/header.component';
+
+const routes: Routes = [
+  {path:'', component:HeaderComponent},
+  {path:'personas', component:UsuariosComponent},
+  {path:'user/login', component:LoginComponent},
+  {path: '**', redirectTo: '' }*/
 ];
 
 @NgModule({
@@ -110,3 +111,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+//https://angular.io/guide/router

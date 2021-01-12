@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-
+//import { HeaderComponent } from './components/header/header.component';
 import { UsuarioService } from './services/usuario.service';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { LoginService } from './services/login.service';
@@ -35,11 +35,15 @@ import { CuentaComponent } from './components/cuenta/cuenta.component';
 import { IngresoDineroComponent } from './components/ingreso-dinero/ingreso-dinero.component';
 import { ExtraerDineroComponent } from './components/extraer-dinero/extraer-dinero.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-<<<<<<< HEAD
-=======
 import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
->>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
 import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
+import { RegisterComponent } from './components/register/register.component';
+
 //import from {JwtHelperService} from '@auth0/angular-jwt';
 
 
@@ -64,13 +68,13 @@ import { ModificarDomicilioComponent } from './components/modificar-domicilio/mo
     IngresoDineroComponent,
     ExtraerDineroComponent,
     PerfilComponent,
-<<<<<<< HEAD
-=======
     ModificarDatosComponent,
->>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
     ModificarDomicilioComponent
   ],
 
+    UsuariosComponent,
+    RegisterComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -93,6 +97,7 @@ import { ModificarDomicilioComponent } from './components/modificar-domicilio/mo
       multi: true
     }
   ], //this is needed? sí, acá le estamos diciendo al AppModule que prepare el AppComponent como primer componente a ejecutar.
+  //], //this is needed?
   bootstrap: [AppComponent]
 })
 export class AppModule { }
