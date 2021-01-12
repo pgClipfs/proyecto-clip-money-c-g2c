@@ -1,4 +1,47 @@
-<h3>Formulario de login:</h3>
+<app-header></app-header>
+
+<div class="image-container">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12 col-sm-offset-2">
+
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <div class="card wizard-card">
+                    <form class="form-container" [formGroup]="form" (ngSubmit)="requestLogin($event)">
+                        <div class="wizard-header">
+                            <h3 class="col-sm-12 d-flex justify-content-center">
+                            <b>Ingrese los datos de su perfil</b><br>
+                            </h3>
+                        </div>
+                        <div class="form-group col-sm-12 col-sm-offset-1">
+                            <label for="username"><b>Username</b></label>
+                            <input type="text" id="username" class="form-control"  placeholder="Username" matInput formControlName="Username" required>
+                        </div>
+                        <div class="form-group col-sm-12 col-sm-offset-1">
+                            <label for="password"><b>Password</b></label>
+                            <input type="text" id="password" class="form-control" placeholder="Password" matInput formControlName="Password" name="pass" required minlength="8">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-block center-block" [routerLink]="['/home']"><b>Entrar</b></button>
+                        </div>
+                        <div class="col-sm-12 d-flex justify-content-center">
+                            <h6><b>¿Olvidaste tu contraseña? haz click <a [routerLink]="['/recuperar-password']">AQUI</a> para recuperarla</b></h6>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div> <!-- wizard container -->
+        </div>
+        </div><!-- end row -->
+    </div> <!--  big container -->
+
+    <div class="col-sm-12 d-flex justify-content-center">
+        <p><b>¿Aun no tienes una cuenta? haz click <a [routerLink]="['/register']">AQUI</a> para registrarte</b></p>
+    </div>
+</div>
+<!--<h3>Formulario de login:</h3>
 
 <form [formGroup]="form" (ngSubmit)="requestLogin($event)">
   <mat-card-header>
@@ -17,4 +60,4 @@
   <mat-card-actions>
     <button mat-raised-button type="submit" >Ingresar</button>
   </mat-card-actions>
-</form>
+</form>-->

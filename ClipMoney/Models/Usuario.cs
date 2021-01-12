@@ -18,12 +18,16 @@ namespace ClipMoney.Models
         private int cuilCuit;
         private string telefono;
         private string calle;
+        //private int numeroDeCalle;
         private string numeroDeCalle;
         private bool departamento; //use Nullable type ?
         private int piso;
         private string puerta;
         private string barrio;
         private string codigoPostal;
+        //private string localidad;
+        //private string provincia; ¿Se incluyen estos campos?
+        //private string pais;
         private int localidad;
 
         public Usuario()
@@ -35,6 +39,7 @@ namespace ClipMoney.Models
             this.nombre = nombre;
             this.apellido = apellido;
         }
+        //public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, string localidad)
 
         public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, string numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, int localidad)
         {
@@ -56,6 +61,8 @@ namespace ClipMoney.Models
             this.barrio = barrio;
             this.codigoPostal = codigoPostal;
             this.localidad = localidad;
+            //this.provincia = provincia;
+            //this.pais = pais;
         }
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
@@ -69,12 +76,16 @@ namespace ClipMoney.Models
         public int CuilCuit { get => cuilCuit; set => cuilCuit = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Calle { get => calle; set => calle = value; }
+        //public int NumeroDeCalle { get => numeroDeCalle; set => numeroDeCalle = value; }
         public string NumeroDeCalle { get => numeroDeCalle; set => numeroDeCalle = value; }
         public bool Departamento { get => departamento; set => departamento = value; }
         public int Piso { get => piso; set => piso = value; }
         public string Puerta { get => puerta; set => puerta = value; }
         public string Barrio { get => barrio; set => barrio = value; }
         public string CodigoPostal { get => codigoPostal; set => codigoPostal = value; }
+        //public string Localidad { get => localidad; set => localidad = value; }
+        //public string Provincia { get => provincia; set => provincia = value; }
+        //public string Pais { get => pais; set => pais = value; }
         public int Localidad { get => localidad; set => localidad = value; }
     }
 }

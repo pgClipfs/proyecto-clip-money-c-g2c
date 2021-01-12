@@ -26,6 +26,10 @@ namespace ClipMoney.Controllers
 
         // GET: api/Usuario/5
         [EnableCors(origins: "*", headers: "*", methods: "*")]
+        //public Usuario Get(int id)
+        //{
+        //    GestorUsuario gestorUsuario = new GestorUsuario();
+        //    return gestorUsuario.ObtenerPorId(id);
         public UsuarioDTO Get(int id)
         {
             GestorUsuario gestorUsuario = new GestorUsuario();
@@ -48,6 +52,7 @@ namespace ClipMoney.Controllers
         public void Put([FromBody] Usuario usuario)
         {
             GestorUsuario gestorUsuario = new GestorUsuario();
+            //gestorUsuario.ModificarUsuario(usuario);
             gestorUsuario.ModificarDatosPersonales(usuario);
         }
 

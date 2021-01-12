@@ -127,5 +127,10 @@
       }
     }
   },
-  "defaultProject": "angularApp"
+  "defaultProject": "angularApp",
+  "cli": {
+    "analytics": "d76fd6a1-094c-4477-97fb-3346c8647705"
+  }
 }
+  //"defaultProject": "angularApp" this version without extra cli object is from develop branch
+//}

@@ -6,6 +6,7 @@ import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  //styleUrls: ['./login.component.css']
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
@@ -17,6 +18,14 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService,
               private formBuilder: FormBuilder) {
     this.emailField = new FormControl('',[
+      /*Validators.required,
+      // Validators.minLength(6),
+      // Validators.maxLength(14)
+      Validators.email
+    ]);
+
+    this.buildForm();*/
+
       Validators.required, 
       // Validators.minLength(6), 
       // Validators.maxLength(14)
@@ -30,7 +39,6 @@ export class LoginComponent implements OnInit {
   reqLog: RequestLogin;
   reqLogin = {Username: "nicolas",Password: "nico"}
   ngOnInit(): void {
-    
   }
 
   sendLogin(){
