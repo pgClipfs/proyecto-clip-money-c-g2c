@@ -19,11 +19,6 @@ namespace ClipMoney.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Operacion/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         // POST: api/Operation
         [AllowAnonymous]
@@ -34,6 +29,19 @@ namespace ClipMoney.Controllers
             operacion.Monto = operacionMontoId.Monto;
             operacion.IdCuenta = operacionMontoId.IdCuenta;
             operacion.Depositar();
+        }
+        // GET: api/Operation/5
+        [AllowAnonymous]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public decimal Get(int id)
+        {
+            GestorCuenta gestorCuenta = new GestorCuenta();
+            return gestorCuenta.ConsultarSaldo(id);
+        }
+
+        // POST: api/Operation
+        public void Post([FromBody] string value)
+        {
         }
 
         // PUT: api/Operation/5

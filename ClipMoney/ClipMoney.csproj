@@ -149,6 +149,7 @@
     <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MovimientosController.cs" />
     <Compile Include="Controllers\OperacionController.cs" />
     <Compile Include="Controllers\TokenGenerator.cs" />
     <Compile Include="Controllers\TokenValidationHandler.cs" />
@@ -156,14 +157,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CrearCuentaInfo.cs" />
     <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Models\GestorCuenta.cs" />
     <Compile Include="Models\GestorLogin.cs" />
+    <Compile Include="Models\GestorOperaciones.cs" />
     <Compile Include="Models\GestorUsuario.cs" />
     <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Models\Operacion.cs" />
-    <Compile Include="Models\ParametroParaDeposito.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Movimientos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

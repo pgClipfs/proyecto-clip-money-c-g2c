@@ -82,7 +82,7 @@ namespace ClipMoney.Models
             }
             return lista;
         }
-        public int CrearCuenta(Usuario usuario, LoginRequest loginRequest)//Revisar este método
+        public int CrearCuenta(CrearCuentaInfo crearCuentaInfo)//Revisar este método
         {
             int id = 0;
             using (SqlConnection conn = new SqlConnection(StrConn))
@@ -92,25 +92,27 @@ namespace ClipMoney.Models
                 comm.CommandText = "dbo.tr_register_client_new_account";
                 comm.Connection = conn;
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.Parameters.Add(new SqlParameter("@nombre", usuario.Nombre));
-                comm.Parameters.Add(new SqlParameter("@apellido", usuario.Apellido));
-                comm.Parameters.Add(new SqlParameter("@foto_frente_dni", usuario.FotoFrenteDni));
-                comm.Parameters.Add(new SqlParameter("@foto_reverso_dni", usuario.FotoReversoDni));
-                comm.Parameters.Add(new SqlParameter("@dni", usuario.Dni));
-                comm.Parameters.Add(new SqlParameter("@email", usuario.Email));
-                comm.Parameters.Add(new SqlParameter("@fecha_nacimiento", usuario.FechaDeNacimiento));
-                comm.Parameters.Add(new SqlParameter("@cuilcuit", usuario.CuilCuit));
-                comm.Parameters.Add(new SqlParameter("@telefono", usuario.Telefono));
-                comm.Parameters.Add(new SqlParameter("@calle", usuario.Calle));
-                comm.Parameters.Add(new SqlParameter("@numero_calle", usuario.NumeroDeCalle));
-                comm.Parameters.Add(new SqlParameter("@departamento", usuario.Departamento));
-                comm.Parameters.Add(new SqlParameter("@piso", usuario.Piso));
-                comm.Parameters.Add(new SqlParameter("@puerta", usuario.Puerta));
-                comm.Parameters.Add(new SqlParameter("@barrio", usuario.Barrio));
-                comm.Parameters.Add(new SqlParameter("@codigo_postal", usuario.CodigoPostal));
-                comm.Parameters.Add(new SqlParameter("@localidad", usuario.Localidad));
-                comm.Parameters.Add(new SqlParameter("@username", loginRequest.Username));
-                comm.Parameters.Add(new SqlParameter("@password", loginRequest.Password));
+                comm.Parameters.Add(new SqlParameter("@nombre", crearCuentaInfo.Nombre));
+                comm.Parameters.Add(new SqlParameter("@apellido", crearCuentaInfo.Apellido));
+                comm.Parameters.Add(new SqlParameter("@foto_frente_dni", crearCuentaInfo.FotoFrenteDni));
+                comm.Parameters.Add(new SqlParameter("@foto_reverso_dni", crearCuentaInfo.FotoReversoDni));
+                comm.Parameters.Add(new SqlParameter("@dni", crearCuentaInfo.Dni));
+                comm.Parameters.Add(new SqlParameter("@email", crearCuentaInfo.Email));
+                comm.Parameters.Add(new SqlParameter("@fecha_nacimiento", crearCuentaInfo.FechaDeNacimiento));
+                comm.Parameters.Add(new SqlParameter("@cuilcuit", crearCuentaInfo.CuilCuit));
+                comm.Parameters.Add(new SqlParameter("@telefono", crearCuentaInfo.Telefono));
+                comm.Parameters.Add(new SqlParameter("@calle", crearCuentaInfo.Calle));
+                comm.Parameters.Add(new SqlParameter("@numero_calle", crearCuentaInfo.NumeroDeCalle));
+                comm.Parameters.Add(new SqlParameter("@departamento", crearCuentaInfo.Departamento));
+                comm.Parameters.Add(new SqlParameter("@piso", crearCuentaInfo.Piso));
+                comm.Parameters.Add(new SqlParameter("@puerta", crearCuentaInfo.Puerta));
+                comm.Parameters.Add(new SqlParameter("@barrio", crearCuentaInfo.Barrio));
+                comm.Parameters.Add(new SqlParameter("@codigo_postal", crearCuentaInfo.CodigoPostal));
+                comm.Parameters.Add(new SqlParameter("@id_localidad", crearCuentaInfo.IdLocalidad));
+                comm.Parameters.Add(new SqlParameter("@username", crearCuentaInfo.Username));
+                comm.Parameters.Add(new SqlParameter("@password", crearCuentaInfo.Password));
+                comm.Parameters.Add(new SqlParameter("@preguntaSecreta", crearCuentaInfo.PreguntaSecreta));
+                comm.Parameters.Add(new SqlParameter("@respuestaSecreta", crearCuentaInfo.RespuestaSecreta));
                 id = Convert.ToInt32(comm.ExecuteScalar());//Aquí quizás debiera tomar el id de la cuenta pero esta tomando el del usuario
                 //SqlDataReader dr = comm.ExecuteReader(); //Con este sqldatareader quizás es una solución para obtener los id necesarios
                 //while (dr.Read())
@@ -154,6 +156,27 @@ namespace ClipMoney.Models
                 comm.Parameters.Add(new SqlParameter("@cvu", cvu));
                 comm.ExecuteNonQuery();
             }
+        }
+        public decimal ConsultarSaldo(long cvu)
+        {
+            decimal saldo = 0;
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand("select saldo from cuentas where cvu = @cvu", conn);
+                //comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@cvu", cvu));
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    saldo = dr.GetDecimal(0);
+                }
+                dr.Close();
+            }
+
+            return saldo;
         }
     }
 }

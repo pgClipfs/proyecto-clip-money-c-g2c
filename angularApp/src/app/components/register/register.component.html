@@ -1,1 +1,453 @@
-<p>register works!</p>
+<app-header></app-header>
+
+<div class="image-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-sm-offset-2">
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+          <form [formGroup]="form" (ngSubmit)="requestRegister($event)">
+            <div class="col-sm-12 col-sm-offset-2">
+              <mat-horizontal-stepper class="card wizard-card">
+                <mat-step label="Cuenta">
+                  <div class="row justify-content-center">
+                    <h4 class="col-sm-12 d-flex justify-content-center">
+                      Comencemos con la informacion basica de tu cuenta
+                    </h4>
+                    <div class="col-sm-5 col-sm-offset-1">
+                      <div class="picture-container">
+                        <div class="picture">
+                          <img
+                            class="picture-src"
+                            id="wizardPicturePreview"
+                            title=""
+                          />
+                          <!-- <input type="text" id="wizard-picture" class="form-control" required formControlName="fotoFrenteDni"> -->
+                          <input
+                            matInput
+                            id="wizard-picture"
+                            class="form-control"
+                            required
+                            formControlName="FotoFrenteDni"
+                          />
+                        </div>
+                        <h6>Sube una foto del frente de tu DNI</h6>
+                      </div>
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-1">
+                      <div class="picture-container">
+                        <div class="picture">
+                          <img
+                            class="picture-src"
+                            id="wizardPicturePreview"
+                            title=""
+                          />
+                          <input
+                            matInput
+                            id="wizard-picture"
+                            class="form-control"
+                            required
+                            formControlName="FotoReversoDni"
+                          />
+                        </div>
+                        <h6>Sube una foto del reverso de tu DNI</h6>
+                      </div>
+                    </div>
+                    <div class="col-sm-10 col-sm-offset-1">
+                      <div class="form-group">
+                        <label
+                          ><b>Email <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="Email"
+                          class="form-control"
+                          placeholder="juan@email.com"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b>Username <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="username"
+                          class="form-control"
+                          placeholder="username"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b>Contraseña <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="password"
+                          class="form-control"
+                          placeholder="Abcd1234"
+                          required
+                        />
+                      </div>
+                      <!-- <div class="form-group">
+                        <label
+                          ><b
+                            >Repita su contraseña <small>(requerido)</small></b
+                          ></label
+                        >
+                        <input
+                          matInput
+                          formControlName="repitaContraseña"
+                          class="form-control"
+                          placeholder="Abcd1234"
+                          required
+                        />
+                      </div> -->
+                      <div class="form-group">
+                        <label
+                          ><b>Elija una pregunta de seguridad</b
+                          ><small>
+                            (requerido. Se le requerirá en caso de solicitar
+                            recuperacion de contraseña)</small
+                          ></label
+                        ><br />
+                        <select
+                          name="Pregunta"
+                          class="form-control"
+                          matInput
+                          formControlName="PreguntaSecreta"
+                          required
+                        >
+                          <option value="¿Nombre de la mascota de la infancia?">
+                            ¿Nombre de la mascota de la infancia?
+                          </option>
+                          <option value="¿Apodo en la escuela?">
+                            ¿Apodo en la escuela?
+                          </option>
+                          <option value="¿A donde me gustaria viajar?">
+                            ¿A donde me gustaria viajar?
+                          </option>
+                          <option value="¿De chico queria ser?">
+                            ¿De chico queria ser?
+                          </option>
+                          <option
+                            value="¿Lo primero que compre con mi primer sueldo fue...?"
+                          >
+                            ¿Lo primero que compre con mi primer sueldo fue...?
+                          </option>
+                          <option value="¿Libro preferido?">
+                            ¿Libro preferido?
+                          </option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b>Respuesta <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="RespuestaSecreta"
+                          name="respuesta"
+                          type="text"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <button
+                      color="primary"
+                      mat-raised-button
+                      matStepperPrevious
+                      type="button"
+                    >
+                      <b>Anterior</b>
+                    </button>
+                    <button
+                      color="primary"
+                      mat-raised-button
+                      matStepperNext
+                      type="button"
+                    >
+                      <b>Siguiente</b>
+                    </button>
+                  </div>
+                </mat-step>
+                <mat-step label="Personal">
+                  <div class="row justify-content-center">
+                    <h4 class="col-sm-12 d-flex justify-content-center">
+                      Carga tus datos personales
+                    </h4>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <label
+                          ><b>Nombre <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="Nombre"
+                          type="text"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b>Apellido <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="Apellido"
+                          type="text"
+                          class="form-control"
+                          placeholder="Lopez..."
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b>DNI <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="Dni"
+                          type="text"
+                          class="form-control"
+                          placeholder="30555888"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b>CUIL/CUIT <small>(requerido)</small></b></label
+                        >
+                        <input
+                          matInput
+                          formControlName="Cuilcuit"
+                          type="text"
+                          class="form-control"
+                          placeholder="20-30555888-3"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b
+                            >Fecha nacimiento<small>(requerido)</small></b
+                          ></label
+                        >
+                        <input
+                          matInput
+                          formControlName="FechaDeNacimiento"
+                          type="date"
+                          class="form-control"
+                          placeholder="15/05/1990"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><b
+                            >Numero de telefono <small>(requerido)</small></b
+                          ></label
+                        >
+                        <input
+                          matInput
+                          formControlName="Telefono"
+                          type="text"
+                          class="form-control"
+                          placeholder="3514539962"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <button
+                      color="primary"
+                      mat-raised-button
+                      matStepperPrevious
+                      type="button"
+                    >
+                      <b>Anterior</b>
+                    </button>
+                    <button
+                      color="primary"
+                      mat-raised-button
+                      matStepperNext
+                      type="button"
+                    >
+                      <b>Siguiente</b>
+                    </button>
+                  </div>
+                </mat-step>
+                <mat-step label="Direccion">
+                  <div class="row justify-content-center">
+                    <div class="col-sm-12">
+                      <h4 class="col-sm-12 d-flex justify-content-center">
+                        Cuentanos donde vives
+                      </h4>
+                      <h6 class="col-sm-12 d-flex justify-content-center">
+                        (informacion necesaria si desea una tarjeta)
+                      </h6>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-1">
+                      <div class="form-group">
+                        <label><b>Calle</b></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Av Peron"
+                          formControlName="Calle"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label><b>Altura</b></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="242"
+                          formControlName="Altura"
+                        />
+                      </div>
+                    </div>
+                    <div class="checkbox col-sm-4 col-sm-offset-1">
+                      <label>
+                        <input type="checkbox" formControlName="Departamento" />
+                        <b>Vivo en un departamento</b>
+                      </label>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                      <div class="form-group">
+                        <label><b>piso</b></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="5"
+                          formControlName="Piso"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                      <div class="form-group">
+                        <label><b>puerta</b></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="b"
+                          formControlName="Puerta"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                      <div class="form-group">
+                        <label><b>Barrio</b></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Alberdi"
+                          formControlName="Barrio"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                      <div class="form-group">
+                        <label><b>Ciudad</b></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Rio Cuarto"
+                          formControlName="IdLocalidad"
+                        />
+                      </div>
+                    </div>
+                    <!-- <div class="col-sm-4 col-sm-offset-1">
+                                    <div class="form-group">
+                                       <label><b>Provincia</b></label>
+                                       <input type="text" class="form-control" placeholder="Cordoba">
+                                     </div>
+                               </div>
+                                <div class="col-sm-6 col-sm-offset-1">
+                                     <div class="form-group">
+                                        <label><b>Pais</b></label><br>
+                                         <select formControlName="Pais" class="form-control">
+                                            <option value="Argentina"> Argentina </option>
+                                            <option value="Brasil"> Brasil </option>
+                                            <option value="Chile"> Chile </option>
+                                            <option value="Uruguay"> Uruguay </option>
+                                            <option value="otro">otro...</option>
+                                        </select>
+                                      </div>
+                                </div> -->
+                    <div class="col-sm-4 col-sm-offset-1">
+                      <div class="form-group">
+                        <label><b>Codigo Postal</b></label>
+                        <input
+                          type="int"
+                          class="form-control"
+                          placeholder="5800"
+                          formControlName="CodigoPostal"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <button
+                      color="primary"
+                      mat-raised-button
+                      matStepperPrevious
+                      type="button"
+                    >
+                      <b>Anterior</b>
+                    </button>
+                    <button color="warn" mat-raised-button type="submit">
+                      <b>Registrar Cuenta</b>
+                    </button>
+                  </div>
+                </mat-step>
+                <mat-step label="Listo">
+                  <div class="tab-pane" id="listo">
+                    <div class="row justify-content-center">
+                      <h4 class="col-sm-12 d-flex justify-content-center">
+                        ¡Tu cuenta fue creada correctamente!
+                      </h4>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div>
+                          <h6 class="col-sm-12 d-flex justify-content-center">
+                            Te agradecemos por elegirnos.
+                          </h6>
+                        </div>
+                        <div>
+                          <h6 class="col-sm-12 d-flex justify-content-center">
+                            Haz click <a [routerLink]="['/login']">AQUI</a> para
+                            iniciar sesion
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-step>
+              </mat-horizontal-stepper>
+            </div>
+          </form>
+        </div>
+        <!-- wizard container -->
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!--  big container -->
+
+  <div class="col-sm-12 d-flex justify-content-center">
+    <p>
+      <b
+        >¿Ya tienes una cuenta? haz click
+        <a [routerLink]="['/login']">AQUI</a> para iniciar sesion</b
+      >
+    </p>
+  </div>
+</div>

@@ -14,6 +14,12 @@ namespace ClipMoney.Models
         private decimal monto;
         private Nullable<long> cvuCbuDestino;
         private int tipoDeOperacion;
+        //private int id;
+        //private DateTime fecha;
+        //private decimal monto;
+        //private long cbu;
+        //private int tipoOperacion;
+        private string nombreOperacion;
         private long idCuenta;
 
         public Operacion()
@@ -34,6 +40,17 @@ namespace ClipMoney.Models
             this.cvuCbuDestino = cvuCbuDestino;
             this.tipoDeOperacion = tipoDeOperacion;
             this.idCuenta = idCuenta;
+        }
+      //Constructor para ultimos movimientos
+      public Operacion(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, long idCuenta, string nombreOperacion)
+        {
+            this.idOperacion = idOperacion;
+            this.fechaDeOperacion = fechaDeOperacion;
+            this.monto = monto;
+            this.cvuCbuDestino = cvuCbuDestino;
+            this.tipoDeOperacion = tipoDeOperacion;
+            this.idCuenta = idCuenta;
+            this.nombreOperacion = nombreOperacion;
         }
 
         public int IdOperacion { get => idOperacion; set => idOperacion = value; }
@@ -60,4 +77,25 @@ namespace ClipMoney.Models
         }
     }
 
+        }
+
+        /*public Operacion(int id, DateTime fecha, decimal monto, long cbu, int tipoOperacion, string nombreOperacion, long idCuenta)
+        {
+            this.Id = id;
+            this.Fecha = fecha;
+            this.Monto = monto;
+            this.Cbu = cbu;
+            this.TipoOperacion = tipoOperacion;
+            this.NombreOperacion = nombreOperacion;
+            this.IdCuenta = idCuenta;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public DateTime Fecha { get => fecha; set => fecha = value; }
+        public decimal Monto { get => monto; set => monto = value; }
+        public long Cbu { get => cbu; set => cbu = value; }
+        public int TipoOperacion { get => tipoOperacion; set => tipoOperacion = value; }
+        public string NombreOperacion { get => nombreOperacion; set => nombreOperacion = value; }
+        public long IdCuenta { get => idCuenta; set => idCuenta = value; }*/
+    }
 }

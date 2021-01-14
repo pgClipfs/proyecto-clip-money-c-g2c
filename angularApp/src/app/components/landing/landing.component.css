@@ -1,0 +1,14 @@
+/* Encabezado */
+.main-header
+{
+    background: url('../../../assets/img/backg.jpg');
+    background-size: cover;
+    min-height: 498px;
+}
+
+
+/* Forms y Botones */
+.form-control, .btn
+{
+    border-radius: 10;
+}

@@ -1,0 +1,19 @@
+.image-container {
+    background-image: url('../../../assets/img/home1.jpg');
+    min-height: 100vh;
+    background-position: center center;
+    background-size: cover;
+}
+
+.data-card {
+    min-height: 410px;
+    background-color: #ffffffa6;
+    box-shadow: -1px 4px 26px 11px  rgba(0,0,0,0.75);
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.data-container {
+    z-index: 3;
+    margin-top: 50px;
+}

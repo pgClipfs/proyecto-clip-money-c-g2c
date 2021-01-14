@@ -24,7 +24,7 @@ namespace ClipMoney.Models
         private string puerta;
         private string barrio;
         private string codigoPostal;
-        private string localidad;
+        private int idLocalidad;
         //private string provincia; ¿Se incluyen estos campos?
         //private string pais;
 
@@ -37,7 +37,7 @@ namespace ClipMoney.Models
             this.nombre = nombre;
             this.apellido = apellido;
         }
-        public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, string localidad)
+        public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, int idLocalidad)
         {
             this.idUsuario = idUsuario;
             this.nombre = nombre;
@@ -56,7 +56,7 @@ namespace ClipMoney.Models
             this.puerta = puerta;
             this.barrio = barrio;
             this.codigoPostal = codigoPostal;
-            this.localidad = localidad;
+            this.idLocalidad = idLocalidad;
             //this.provincia = provincia;
             //this.pais = pais;
         }
@@ -78,7 +78,7 @@ namespace ClipMoney.Models
         public string Puerta { get => puerta; set => puerta = value; }
         public string Barrio { get => barrio; set => barrio = value; }
         public string CodigoPostal { get => codigoPostal; set => codigoPostal = value; }
-        public string Localidad { get => localidad; set => localidad = value; }
+        public int IdLocalidad { get => idLocalidad; set => idLocalidad = value; }
         //public string Provincia { get => provincia; set => provincia = value; }
         //public string Pais { get => pais; set => pais = value; }
     }
