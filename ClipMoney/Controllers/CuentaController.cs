@@ -9,7 +9,8 @@ using System.Web.Http.Cors;
 
 namespace ClipMoney.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
     [RoutePrefix("api/cuenta")]
     public class CuentaController : ApiController
     {
@@ -34,17 +35,24 @@ namespace ClipMoney.Controllers
         // POST: api/Cuenta
         [AllowAnonymous]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        public int Post([FromBody]Usuario usuario, LoginRequest loginRequest)//Revisar esta petición
+        //public int Post([FromBody]Usuario usuario, LoginRequest loginRequest)//Revisar esta petición
+        //{
+        //    int id;
+        //    GestorCuenta gestorCuenta = new GestorCuenta();
+        //    id = gestorCuenta.CrearCuenta(usuario, loginRequest);
+        //    return id;
+        //}
+        public int Post([FromBody] CrearCuentaInfo crearCuentaInfo)//Revisar esta petición
         {
             int id;
             GestorCuenta gestorCuenta = new GestorCuenta();
-            id = gestorCuenta.CrearCuenta(usuario, loginRequest);
+            id = gestorCuenta.CrearCuenta(crearCuentaInfo);
             return id;
         }
 
         // PUT: api/Cuenta/5
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        public void Put([FromBody]Cuenta cuenta)
+        public void Put([FromBody] Cuenta cuenta)
         {
             GestorCuenta gestorCuenta = new GestorCuenta();
             gestorCuenta.ModificarCuenta(cuenta);
