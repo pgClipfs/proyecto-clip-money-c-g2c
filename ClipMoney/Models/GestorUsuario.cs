@@ -116,7 +116,7 @@ namespace ClipMoney.Models
                 comm.Parameters.Add(new SqlParameter("@puerta", nuevo.Puerta));
                 comm.Parameters.Add(new SqlParameter("@barrio", nuevo.Barrio));
                 comm.Parameters.Add(new SqlParameter("@codigo_postal", nuevo.CodigoPostal));
-                comm.Parameters.Add(new SqlParameter("@localidad", nuevo.Localidad));
+                comm.Parameters.Add(new SqlParameter("@idLocalidad", nuevo.IdLocalidad));
                 id = Convert.ToInt32(comm.ExecuteScalar());
             }
             return id;
@@ -148,7 +148,7 @@ namespace ClipMoney.Models
                 comm.Parameters.Add(new SqlParameter("@puerta", nuevo.Puerta));
                 comm.Parameters.Add(new SqlParameter("@barrio", nuevo.Barrio));
                 comm.Parameters.Add(new SqlParameter("@codigo_postal", nuevo.CodigoPostal));
-                comm.Parameters.Add(new SqlParameter("@localidad", nuevo.Localidad));
+                comm.Parameters.Add(new SqlParameter("@idLocalidad", nuevo.IdLocalidad));
                 comm.ExecuteNonQuery();
             }
         }
@@ -172,7 +172,7 @@ namespace ClipMoney.Models
                 comm.Parameters.Add(new SqlParameter("@puerta", usuario.Puerta));
                 comm.Parameters.Add(new SqlParameter("@barrio", usuario.Barrio));
                 comm.Parameters.Add(new SqlParameter("@codigo_postal", usuario.CodigoPostal));
-                comm.Parameters.Add(new SqlParameter("@localidad", usuario.Localidad));
+                comm.Parameters.Add(new SqlParameter("@idLocalidad", usuario.IdLocalidad));
                 comm.ExecuteNonQuery();
             }
         }

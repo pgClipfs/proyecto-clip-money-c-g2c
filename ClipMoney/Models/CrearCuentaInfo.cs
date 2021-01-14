@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ClipMoney.Models
 {
-    public class Usuario
+    public class CrearCuentaInfo
     {
         private int idUsuario;
         private string nombre;
@@ -25,19 +25,17 @@ namespace ClipMoney.Models
         private string barrio;
         private string codigoPostal;
         private int idLocalidad;
-        //private string provincia; ¿Se incluyen estos campos?
-        //private string pais;
+        private string username;
+        private string password;
+        private string preguntaSecreta;
+        private string respuestaSecreta;
 
-        public Usuario()
+        public CrearCuentaInfo()
         {
 
         }
-        public Usuario(string nombre, string apellido)//constructor temporal para simplificar el proceso de construccion de controlador de usuario
-        {
-            this.nombre = nombre;
-            this.apellido = apellido;
-        }
-        public Usuario(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, int idLocalidad)
+
+        public CrearCuentaInfo(int idUsuario, string nombre, string apellido, string fotoFrenteDni, string fotoReversoDni, int dni, string email, DateTime fechaDeNacimiento, int cuilCuit, string telefono, string calle, int numeroDeCalle, bool departamento, int piso, string puerta, string barrio, string codigoPostal, int idLocalidad, string username, string password, string preguntaSecreta, string respuestaSecreta)
         {
             this.idUsuario = idUsuario;
             this.nombre = nombre;
@@ -57,8 +55,10 @@ namespace ClipMoney.Models
             this.barrio = barrio;
             this.codigoPostal = codigoPostal;
             this.idLocalidad = idLocalidad;
-            //this.provincia = provincia;
-            //this.pais = pais;
+            this.username = username;
+            this.password = password;
+            this.preguntaSecreta = preguntaSecreta;
+            this.respuestaSecreta = respuestaSecreta;
         }
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
@@ -79,7 +79,9 @@ namespace ClipMoney.Models
         public string Barrio { get => barrio; set => barrio = value; }
         public string CodigoPostal { get => codigoPostal; set => codigoPostal = value; }
         public int IdLocalidad { get => idLocalidad; set => idLocalidad = value; }
-        //public string Provincia { get => provincia; set => provincia = value; }
-        //public string Pais { get => pais; set => pais = value; }
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
+        public string PreguntaSecreta { get => preguntaSecreta; set => preguntaSecreta = value; }
+        public string RespuestaSecreta { get => respuestaSecreta; set => respuestaSecreta = value; }
     }
 }
