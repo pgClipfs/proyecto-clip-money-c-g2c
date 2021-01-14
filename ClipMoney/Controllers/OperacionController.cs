@@ -19,6 +19,17 @@ namespace ClipMoney.Controllers
             return new string[] { "value1", "value2" };
         }
 
+
+        // POST: api/Operation
+        [AllowAnonymous]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public void Post([FromBody] Operacion operacionMontoId)
+        {
+            Operacion operacion = new Operacion();
+            operacion.Monto = operacionMontoId.Monto;
+            operacion.IdCuenta = operacionMontoId.IdCuenta;
+            operacion.Depositar();
+        }
         // GET: api/Operation/5
         [AllowAnonymous]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
@@ -43,5 +54,4 @@ namespace ClipMoney.Controllers
         {
         }
     }
-
 }
