@@ -14,11 +14,7 @@ namespace ClipMoney.Models
         private decimal monto;
         private Nullable<long> cvuCbuDestino;
         private int tipoDeOperacion;
-        //private int id;
-        //private DateTime fecha;
-        //private decimal monto;
         //private long cbu;
-        //private int tipoOperacion;
         private string nombreOperacion;
         private long idCuenta;
 
@@ -41,8 +37,8 @@ namespace ClipMoney.Models
             this.tipoDeOperacion = tipoDeOperacion;
             this.idCuenta = idCuenta;
         }
-      //Constructor para ultimos movimientos
-      public Operacion(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, string nombreOperacion, long idCuenta )
+        //Constructor para ultimos movimientos
+        public Operacion(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, string nombreOperacion, long idCuenta)
         {
             this.idOperacion = idOperacion;
             this.fechaDeOperacion = fechaDeOperacion;
@@ -51,6 +47,13 @@ namespace ClipMoney.Models
             this.tipoDeOperacion = tipoDeOperacion;
             this.idCuenta = idCuenta;
             this.nombreOperacion = nombreOperacion;
+        }
+
+        //Constructor para giro al descubierto
+        public Operacion( decimal monto, long idCuenta)
+        {
+            this.monto = monto;
+            this.idCuenta = idCuenta;
         }
 
         public int IdOperacion { get => idOperacion; set => idOperacion = value; }
