@@ -172,7 +172,7 @@ namespace ClipMoney.Models
                 comm.Parameters.Add(new SqlParameter("@puerta", usuario.Puerta));
                 comm.Parameters.Add(new SqlParameter("@barrio", usuario.Barrio));
                 comm.Parameters.Add(new SqlParameter("@codigo_postal", usuario.CodigoPostal));
-                comm.Parameters.Add(new SqlParameter("@idLocalidad", usuario.IdLocalidad));
+                comm.Parameters.Add(new SqlParameter("@localidad", usuario.IdLocalidad));
                 comm.ExecuteNonQuery();
             }
         }
