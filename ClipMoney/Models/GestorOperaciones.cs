@@ -42,5 +42,20 @@ namespace ClipMoney.Models
             }
             return movimientos;
         }
+
+        public void RealizarGiroAlDescubierto(decimal monto, long idCuenta)
+        {
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "dbo.tr_overdraft2";
+                comm.Connection = conn;
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@ammount", monto));
+                comm.Parameters.Add(new SqlParameter("@id_account", idCuenta));
+                comm.ExecuteNonQuery();
+            }
+        }
     }
 }
