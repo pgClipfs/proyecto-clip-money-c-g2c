@@ -32,10 +32,10 @@ namespace ClipMoney.Controllers
         // PUT: api/Giro/1
         [AllowAnonymous]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        public void Put([FromBody] Operacion operacion)
+        public string Put([FromBody] Operacion operacion)
         {
             GestorOperaciones gestorOperaciones = new GestorOperaciones();
-            gestorOperaciones.RealizarGiroAlDescubierto(operacion.Monto, operacion.IdCuenta);
+            return gestorOperaciones.RealizarGiroAlDescubierto(operacion.Monto, operacion.IdCuenta);
         }
 
         // DELETE: api/Giro/5

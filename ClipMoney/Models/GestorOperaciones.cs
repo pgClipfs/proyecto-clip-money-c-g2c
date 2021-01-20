@@ -43,19 +43,58 @@ namespace ClipMoney.Models
             return movimientos;
         }
 
-        public void RealizarGiroAlDescubierto(decimal monto, long idCuenta)
+        public string RealizarGiroAlDescubierto(decimal monto, long idCuenta)
         {
+            string resultado = "";
+            decimal saldo = obtenerSaldo(idCuenta);
+            if (monto <= saldo * (decimal)1.10 && monto > saldo && saldo >= 0)
+            {
+                {
+                    using (SqlConnection conn = new SqlConnection(StrConn))
+                    {
+                        conn.Open();
+                        SqlCommand comm = new SqlCommand();
+                        comm.CommandText = "dbo.proc_giroAlDescubierto";
+                        comm.Connection = conn;
+                        comm.CommandType = System.Data.CommandType.StoredProcedure;
+                        comm.Parameters.Add(new SqlParameter("@ammount", monto));
+                        comm.Parameters.Add(new SqlParameter("@id_account", idCuenta));
+                        comm.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    resultado = "Operación realizada con exitosamente";
+                }
+            }
+            else
+            {
+                if (saldo < 0)
+                {
+                    resultado = "No posee dinero en la cuenta";
+                }
+                else
+                {
+                    resultado = "El monto debe ser superior a " + (saldo.ToString("0.##")) + " e inferior o igual a " + (saldo * (decimal)1.10).ToString("0.##"); ;
+                }
+            }
+            return resultado;
+        }
+
+        public decimal obtenerSaldo(long cvu)
+        {
+            decimal saldo;
             using (SqlConnection conn = new SqlConnection(StrConn))
             {
+                string consulta = "SELECT saldo FROM cuentas WHERE cvu=" + cvu;
                 conn.Open();
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "dbo.tr_overdraft2";
-                comm.Connection = conn;
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.Parameters.Add(new SqlParameter("@ammount", monto));
-                comm.Parameters.Add(new SqlParameter("@id_account", idCuenta));
-                comm.ExecuteNonQuery();
+                SqlCommand comm = new SqlCommand(consulta, conn);
+                comm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader dr = comm.ExecuteReader();
+                dr.Read();
+                saldo = dr.GetDecimal(0);
+                dr.Close();
             }
+            return saldo;
         }
+
     }
 }
