@@ -1,0 +1,3 @@
+-Se agrego columna monto_giro en operaciones
+-procedimientos de almacenado agregados a bd nueva utilizada
+(last movements, giro al descubierto,obtener usuario por id, modificar datos personales)
