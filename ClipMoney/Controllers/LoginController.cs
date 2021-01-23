@@ -32,6 +32,15 @@ namespace ClipMoney.Controllers
         }
 
         [HttpPost]
+        [Route("idcuenta")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public long ObtenerId(LoginRequest loginRequest)
+        {
+            GestorLogin gestorLogin = new GestorLogin();
+            return gestorLogin.ObtenerIdCuenta(loginRequest);
+        }
+
+        [HttpPost]
         [Route("authenticate")]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IHttpActionResult Authenticate(LoginRequest login)
