@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar (opcionClickeada)="opcionClick($event)"></app-navbar>
 
 <div class="image-container">
   <div class="container col-sm-10">
@@ -6,53 +6,30 @@
       <div class="col-sm-12">
         <div class="data-container">
           <div class="card data-card text-center">
-            <h2>
+            <!-- <h2>
               Welcome! Your account id is: <span class="account-id"></span>
             </h2>
             <app-consultar-saldo
               [accountId]="dataDashboard"
             ></app-consultar-saldo>
-            <form>
-              <div class="form-group">
-                <label for="#">Saldo Actual</label>
-                <input
-                  type="email"
-                  class="form-control text-center"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="#">Nombre y Apellido </label>
-                <input
-                  type="email"
-                  class="form-control text-center"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="#">Nro CBU </label>
-                <input
-                  type="email"
-                  class="form-control text-center"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="#">CUIT/CUIL</label>
-                <input
-                  type="email"
-                  class="form-control text-center"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-            </form>
+            <h6>Nombres, Apellido, DNI o CUIT</h6> -->
+            <app-informacion-de-cuenta
+              [accountId]="dataDashboard"
+              [mostrarInfoBasica]="true"
+              *ngIf="mostrarInfoBasica"
+            ></app-informacion-de-cuenta>
+            <br />
+            <app-ingreso-dinero
+              [mostrarIngresoDeposito]="false"
+              [entradaIdCuenta]="123"
+              *ngIf="mostrarIngresoDepositoHome"
+            ></app-ingreso-dinero>
+            <app-extraer-dinero
+              [mostrarExtraccion]="true"
+              [entradaIdCuenta]="12345"
+              *ngIf="mostrarExtraccion"
+            >
+            </app-extraer-dinero>
           </div>
         </div>
       </div>

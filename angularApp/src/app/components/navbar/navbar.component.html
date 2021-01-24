@@ -1,37 +1,71 @@
 <!-- barra de navegacion -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-    <div class="container col-sm-12">
-        <!-- logo -->
-        <div id="logo-container" class="navbar-brand text-uppercase pt-6">
-            <img src="../../../assets/img/2CM.png" alt="Logo" id="logo" class="img-fluid rounded-circle"/>
-            <span class="logo-words"><b>$</b></span><span><b>2C</b></span><span class="logo-words"><b>Money$</b></span>
-        </div>
-
-        <!--contenido de navbar -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto pt-6">
-<<<<<<< HEAD
-                <li class="nav-item"><a class="nav-link" href="/saldo">Saldo</a></li>
-=======
-                <li class="nav-item"><a class="nav-link" href="/home">Saldo</a></li>
->>>>>>> dfac1b7b9ac2760086d8032ed311e5033667e969
-                <li class="nav-item"><a class="nav-link" href="/perfil">Perfil</a></li>
-                <li class="nav-item"><a class="nav-link" href="/cuenta">Cuenta</a></li>
-                <li class="nav-item"><a class="nav-link" href="/tarjeta">Tarjeta</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Operaciones
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarDropdown">
-                        <a class="dropdown-item" routerLink="/ingreso-dinero">Ingresar dinero en mi cuenta</a>
-                        <a class="dropdown-item" routerLink="/extraer-dinero">Retirar dinero en mi cuentas</a>
-                        <a class="dropdown-item" routerLink="/transferencias">Transferencias</a>
-                        <a class="dropdown-item" routerLink="/movimientos">Ver ultimos movimientos</a>
-                    </div>
-                  </li>
-                <li class="nav-item"><a class="nav-link" href="/">Salir</a></li>
-            </ul>
-        </div>
+  <div class="container col-sm-12">
+    <!-- logo -->
+    <div id="logo-container" class="navbar-brand text-uppercase pt-6">
+      <img
+        src="../../../assets/img/2CM.png"
+        alt="Logo"
+        id="logo"
+        class="img-fluid rounded-circle"
+      />
+      <span class="logo-words"><b>$</b></span
+      ><span><b>2C</b></span
+      ><span class="logo-words"><b>Money$</b></span>
     </div>
+
+    <!--contenido de navbar -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto pt-6">
+        <li class="nav-item"><a class="nav-link" href="/saldo">Saldo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/home">Saldo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/perfil">Perfil</a></li>
+        <li class="nav-item"><a class="nav-link" href="/cuenta">Cuenta</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tarjeta">Tarjeta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Operaciones
+          </a>
+          <div
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+            id="navbarDropdown"
+          >
+            <button type="button" (click)="habilitarInfoBasica()">
+              Ver información básica de la cuenta
+            </button>
+            <!-- <a class="dropdown-item" routerLink="/ingreso-dinero">Ingresar dinero en mi cuenta</a> -->
+            <button type="button" (click)="habilitarDeposito()">
+              Hacer depósito
+            </button>
+            <!-- <a class="dropdown-item" routerLink="/extraer-dinero"
+                >Retirar dinero en mi cuentas</a
+              > -->
+            <button type="button" (click)="habilitarExtraccion()">
+              Hacer extración
+            </button>
+            <a class="dropdown-item" routerLink="/transferencias"
+              >Transferencias</a
+            >
+            <a class="dropdown-item" routerLink="/movimientos"
+              >Ver ultimos movimientos</a
+            >
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/">Salir</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>

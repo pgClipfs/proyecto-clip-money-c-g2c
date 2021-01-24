@@ -37,6 +37,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 //import { ModificarDatosComponent } from './components/modificar-datos/modificar-datos.component';
 import { ModificarDomicilioComponent } from './components/modificar-domicilio/modificar-domicilio.component';
 import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-saldo.component';
+import { InformacionDeCuentaComponent } from './components/informacion-de-cuenta/informacion-de-cuenta.component';
 //import {MatInputModule} from '@angular/material/input';
 //import {MatFormFieldModule} from '@angular/material/form-field';
 //import { MatButtonModule } from '@angular/material/button';
@@ -70,6 +71,7 @@ import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-
     ModificarDatosComponent,
     ModificarDomicilioComponent,
     ConsultarSaldoComponent,
+    InformacionDeCuentaComponent,
   ],
   imports: [
     BrowserModule,
