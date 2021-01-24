@@ -1,42 +1,60 @@
-<app-navbar></app-navbar>
-
-<div class="image-container">
-    <div class="container col-sm-10">
-        <div class="row">
-        <div class="col-sm-12">
-            <div class="data-container">
-
-                <div class="card data-card">
-                    <div class="col-sm-12">
-                        <div>
-                            <div class="col">
-                                <form class="form-container">
-                                    <div class="wizard-header">
-                                        <h3 class="col-sm-12 d-flex justify-content-center">
-                                        Ingresar Dinero
-                                        </h3>
-                                    </div>  
-                                    <div class="form-group col-sm-12 col-sm-offset-1">  
-                                        <b>Saldo Actual:</b>
-
-                                    </div>  
-                                    <div class="form-group col-sm-12 col-sm-offset-1">
-                                        <label for="monto"><b>Monto que desea ingresar:</b></label>
-                                        <input type="int" id="monto" class="form-control" placeholder="¿Cuanto dinero desea ingresar?" matInput formControlName="Monto" required>
-                                    </div>
-                                    <div class="col">
-                                        <button type="submit" class="btn btn-block center-block"><b>Ingresar Dinero</b></button>
-                                    </div>
-                                </form>
-
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+<div class="container col-sm-10">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="data-container">
+        <div class="card data-card">
+          <div class="col">
+            <form class="form-container" [formGroup]="form">
+              <div class="wizard-header">
+                <h3 class="col-sm-12 d-flex justify-content-center">
+                  Ingresar Dinero
+                </h3>
+              </div>
+              <div class="form-group col-sm-12 col-sm-offset-1">
+                <b>Saldo Actual:</b>
+              </div>
+              <div class="form-group col-sm-12 col-sm-offset-1">
+                <label for="monto"><b>Monto que desea ingresar:</b></label>
+                <input
+                  type="number"
+                  id="monto"
+                  class="form-control"
+                  placeholder="¿Cuanto dinero desea ingresar?"
+                  matInput
+                  formControlName="Monto"
+                  required
+                />
+                <label for="idCuenta"
+                  ><b>Id de cuenta que desea ingresar:</b></label
+                >
+                <input
+                  type="number"
+                  id="idCuenta"
+                  class="form-control idCuenta"
+                  placeholder="id de cuenta placeholder"
+                  matInput
+                  formControlName="IdCuenta"
+                  required
+                />
+                <!-- <input
+                          type="text"
+                          id="username"
+                          class="form-control"
+                          placeholder="Username"
+                          matInput
+                          formControlName="Username"
+                          required
+                        /> -->
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-block center-block">
+                  <b>Ingresar Dinero</b>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
