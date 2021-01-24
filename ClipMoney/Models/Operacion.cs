@@ -73,6 +73,40 @@ namespace ClipMoney.Models
                 comm.ExecuteNonQuery();
             }
         }
+        public void Extraer()
+        {
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "dbo.proc_do_extraction";
+                comm.Connection = conn;
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@ammount", this.Monto));
+                comm.Parameters.Add(new SqlParameter("@id_account", this.IdCuenta));
+                comm.ExecuteNonQuery();
+            }
+        }
+        public void Transferir()
+        {
+            string StrConn = "Server=DESKTOP-7SC2IQO\\SQLEXPRESS;Database=db_wallet_clip_money;Trusted_Connection=True;";
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+
+                //conn.Execute("dbo.tr_transference @monto @cvu_cbu_destino @id_cuenta", new { @ammount = monto, @cvu_cbu_destino = cvuCbuDestino, @id_account = idCuenta });
+
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "dbo.tr_transference";
+                comm.Connection = conn;
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@monto", this.Monto));
+                comm.Parameters.Add(new SqlParameter("@id_cuenta", this.IdCuenta));
+                comm.Parameters.Add(new SqlParameter("@cvu_cbu_destino", this.CvuCbuDestino));
+                comm.ExecuteNonQuery();
+            }
+        }
     }
 
 }
