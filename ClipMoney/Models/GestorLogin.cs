@@ -34,5 +34,29 @@ namespace ClipMoney.Models
             return result;
 
         }
+        public long ObtenerIdCuenta(LoginRequest loginRequest)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+            long cvu = 0;
+
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+
+                SqlCommand comm = new SqlCommand("dbo.proc_obtener_login", conn);
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@username", loginRequest.Username));
+                comm.Parameters.Add(new SqlParameter("@password", loginRequest.Password));
+
+                SqlDataReader reader = comm.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    cvu = reader.GetInt64(4);
+                }
+
+            }
+            return cvu;
+        }
     }
 }
