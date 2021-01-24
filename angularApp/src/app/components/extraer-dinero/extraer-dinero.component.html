@@ -18,14 +18,25 @@
                                     </div>  
                                     <div class="form-group col-sm-12 col-sm-offset-1">  
                                         <b>Saldo Actual:</b>
-
-                                    </div>  
+                                    </div>
                                     <div class="form-group col-sm-12 col-sm-offset-1">
                                         <label for="retiro"><b>Monto que desea ratirar:</b></label>
                                         <input type="int" id="retiro" class="form-control" placeholder="¿Cuanto dinero desea retirar de su cuenta?" matInput formControlName="Retiro" required>
+                                    </div>  
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-block center-block"><b>Retiro Normal</b></button>
+                                    </div>
+                                    <div class="form-group col-sm-12 col-sm-offset-1">  
+                                        <b>¿No te alcanza el dinero? Actualmentepodes realizar un giro al descubierto de hasta: $    </b>
+                                        <b>para usar como quieras.</b>
+                                        (el monto extra sobre tu saldo actual retirado se te descontará en cuanto deposites nuevamente)
+                                    </div> 
+                                    <div class="form-group col-sm-12 col-sm-offset-1">
+                                        <label for="retiro"><b>Monto que desea ratirar como giro al descubierto:</b></label>
+                                        <input type="int" id="retiro" class="form-control" placeholder="¿Cuanto dinero desea retirar de su cuenta?" matInput formControlName="Retiro" required>
                                     </div>
                                     <div class="col">
-                                        <button type="submit" class="btn btn-block center-block"><b>Retirar Dinero</b></button>
+                                        <button type="submit" class="btn btn-block center-block"><b>Retiro con giro al descubierto</b></button>
                                     </div>
                                 </form>
 
