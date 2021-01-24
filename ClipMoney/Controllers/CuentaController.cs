@@ -65,5 +65,15 @@ namespace ClipMoney.Controllers
             GestorCuenta gestorCuenta = new GestorCuenta();
             gestorCuenta.DesactivarCuenta(id);
         }
+
+        // POST: api/activate/5
+        [Route("activate")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public void ActivarCuenta([FromBody] Usuario usuario)
+        {
+            GestorCuenta gestorCuenta = new GestorCuenta();
+            gestorCuenta.ActivarCuenta(usuario.IdUsuario, usuario.FotoFrenteDni, usuario.FotoReversoDni);
+        }
+
     }
 }
