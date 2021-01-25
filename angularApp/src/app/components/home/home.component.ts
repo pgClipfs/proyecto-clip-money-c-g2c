@@ -10,9 +10,12 @@ export class HomeComponent implements OnInit {
   mostrarIngresoDepositoHome: boolean;
   mostrarExtraccion: boolean;
   mostrarInfoBasica: boolean;
+  mostrarTransferencia: boolean;
+  mostrarUltimosMovimientos: boolean;
 
   constructor() {
     this.mostrarInfoBasica = true;
+    //this.mostrarUltimosMovimientos = false;
   }
 
   ngOnInit(): void {
@@ -34,17 +37,39 @@ export class HomeComponent implements OnInit {
         this.mostrarIngresoDepositoHome = entrada.opcionValue;
         this.mostrarExtraccion = false;
         this.mostrarInfoBasica = false;
+        this.mostrarTransferencia = false;
+        this.mostrarUltimosMovimientos = false;
         break;
 
       case 'extraccion':
         this.mostrarExtraccion = entrada.opcionValue;
         this.mostrarIngresoDepositoHome = false;
         this.mostrarInfoBasica = false;
+        this.mostrarTransferencia = false;
+        this.mostrarUltimosMovimientos = false;
         break;
 
       case 'infoBasica':
         this.mostrarInfoBasica = entrada.opcionValue;
         this.mostrarExtraccion = false;
+        this.mostrarIngresoDepositoHome = false;
+        this.mostrarTransferencia = false;
+        //this.mostrarUltimosMovimientos = false;
+        break;
+
+      case 'transferencia':
+        this.mostrarTransferencia = entrada.opcionValue;
+        this.mostrarExtraccion = false;
+        this.mostrarInfoBasica = false;
+        this.mostrarIngresoDepositoHome = false;
+        this.mostrarUltimosMovimientos = false;
+        break;
+
+      case 'ultimosMovimientos':
+        this.mostrarUltimosMovimientos = entrada.opcionValue;
+        this.mostrarExtraccion = false;
+        this.mostrarInfoBasica = false;
+        this.mostrarTransferencia = false;
         this.mostrarIngresoDepositoHome = false;
         break;
 

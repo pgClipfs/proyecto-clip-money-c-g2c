@@ -56,12 +56,18 @@
             <button type="button" (click)="habilitarExtraccion()">
               Hacer extración
             </button>
-            <a class="dropdown-item" routerLink="/transferencias"
+            <!-- <a class="dropdown-item" routerLink="/transferencias"
               >Transferencias</a
-            >
-            <a class="dropdown-item" routerLink="/movimientos"
+            > -->
+            <button type="button" (click)="habilitarTransferencia()">
+              Hacer transferencia
+            </button>
+            <!-- <a class="dropdown-item" routerLink="/movimientos"
               >Ver ultimos movimientos</a
-            >
+            > -->
+            <button type="button" (click)="habilitarUltimosMovimientos()">
+              Ver ultimos movimientos
+            </button>
           </div>
         </li>
         <li class="nav-item"><a class="nav-link" href="/">Salir</a></li>
