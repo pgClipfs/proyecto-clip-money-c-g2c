@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { OperacionDepositoExtraccion } from '../models/operacion-deposito-extraccion.model';
 import { OperacionTransferencia } from '../models/operacion-transferencia.model';
+import { Movimiento } from '../models/movimiento.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,7 @@ export class OperacionService {
   url2 = 'https://localhost:44382/api/operacion/extraccion';
   url3 = 'https://localhost:44382/api/operacion/transferencia';
   url4 = 'https://localhost:44382/api/operacion/giroAlDescubierto';
+  url5 = 'https://localhost:44382/api/movimientos/';
 
   constructor(private httpclient: HttpClient) {
     console.log('Service operacion is running!');
@@ -21,7 +23,7 @@ export class OperacionService {
   makeDeposit(operacion: OperacionDepositoExtraccion): Observable<any> {
     let header = new HttpHeaders().set('Content-Type', 'application/json');
     return this.httpclient.post<OperacionDepositoExtraccion>(
-      this.url1,
+      this.url,
       operacion,
       { headers: header }
     );
@@ -50,5 +52,12 @@ export class OperacionService {
       operacion,
       { headers: header }
     );
+  }
+
+  getLastMovements(accountId: string): Observable<any> {
+    let header = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.httpclient.get<any>(this.url5 + accountId, {
+      headers: header,
+    });
   }
 }

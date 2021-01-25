@@ -30,6 +30,17 @@
               *ngIf="mostrarExtraccion"
             >
             </app-extraer-dinero>
+            <app-transferencia
+              [mostrarTransferencia]="false"
+              [accountId]="dataDashboard"
+              [entradaIdCuenta]="10025"
+              *ngIf="mostrarTransferencia"
+            ></app-transferencia>
+            <app-ultimos-movimientos
+              [entradaIdCuenta]="dataDashboard"
+              [mostrarUltimosMovimientos]="true"
+              *ngIf="mostrarUltimosMovimientos"
+            ></app-ultimos-movimientos>
           </div>
         </div>
       </div>

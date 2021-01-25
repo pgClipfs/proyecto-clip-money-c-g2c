@@ -30,4 +30,18 @@ export class NavbarComponent implements OnInit {
     console.log('mensaje desde func para habilitar información básica');
     this.opcionClickeada.emit({ opcionValue: true, opcionType: 'infoBasica' });
   }
+  habilitarTransferencia() {
+    console.log('mensaje desde func para habilitar transferencia');
+    this.opcionClickeada.emit({
+      opcionValue: true,
+      opcionType: 'transferencia',
+    });
+  }
+  habilitarUltimosMovimientos() {
+    console.log('mensaje desde func para habilitar ultimosMovimientos');
+    this.opcionClickeada.emit({
+      opcionValue: true,
+      opcionType: 'ultimosMovimientos',
+    });
+  }
 }

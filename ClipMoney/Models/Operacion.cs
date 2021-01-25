@@ -30,15 +30,15 @@ namespace ClipMoney.Models
             this.idOperacion = idOperacion;
         }
 
-        public Operacion(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, long idCuenta)
-        {
-            this.idOperacion = idOperacion;
-            this.fechaDeOperacion = fechaDeOperacion;
-            this.monto = monto;
-            this.cvuCbuDestino = cvuCbuDestino;
-            this.tipoDeOperacion = tipoDeOperacion;
-            this.idCuenta = idCuenta;
-        }
+        //public Operacion(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, long idCuenta)
+        //{
+        //    this.idOperacion = idOperacion;
+        //    this.fechaDeOperacion = fechaDeOperacion;
+        //    this.monto = monto;
+        //    this.cvuCbuDestino = cvuCbuDestino;
+        //    this.tipoDeOperacion = tipoDeOperacion;
+        //    this.idCuenta = idCuenta;
+        //}
         //Constructor para ultimos movimientos
         public Operacion(int idOperacion, DateTime fechaDeOperacion, decimal monto, Nullable<long> cvuCbuDestino, int tipoDeOperacion, string nombreOperacion, long idCuenta)
         {
@@ -47,8 +47,8 @@ namespace ClipMoney.Models
             this.monto = monto;
             this.cvuCbuDestino = cvuCbuDestino;
             this.tipoDeOperacion = tipoDeOperacion;
-            this.idCuenta = idCuenta;
             this.nombreOperacion = nombreOperacion;
+            this.idCuenta = idCuenta;
         }
 
         public int IdOperacion { get => idOperacion; set => idOperacion = value; }
@@ -57,6 +57,7 @@ namespace ClipMoney.Models
         public int TipoDeOperacion { get => tipoDeOperacion; set => tipoDeOperacion = value; }
         public long IdCuenta { get => idCuenta; set => idCuenta = value; }
         public Nullable<long> CvuCbuDestino { get => cvuCbuDestino; set => cvuCbuDestino = value; }
+        public string NombreOperacion { get => nombreOperacion; set => nombreOperacion = value; }
 
         public void Depositar()
         {

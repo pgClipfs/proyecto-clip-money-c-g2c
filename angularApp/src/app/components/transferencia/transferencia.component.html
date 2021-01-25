@@ -7,30 +7,28 @@
             <form
               class="form-container"
               [formGroup]="form"
-              (ngSubmit)="extraction($event)"
+              (ngSubmit)="transference($event)"
             >
               <div class="wizard-header">
                 <h3 class="col-sm-12 d-flex justify-content-center">
-                  Retirar Dinero
+                  Transferencia de dinero entre cuentas de la aplicación.
                 </h3>
               </div>
               <div class="form-group col-sm-12 col-sm-offset-1">
                 <b>Saldo Actual:</b>
               </div>
               <div class="form-group col-sm-12 col-sm-offset-1">
-                <label for="monto"><b>Monto que desea ratirar:</b></label>
+                <label for="monto"><b>Monto que desea enviar:</b></label>
                 <input
-                  type="int"
+                  type="number"
                   id="monto"
                   class="form-control"
-                  placeholder="¿Cuanto dinero desea retirar de su cuenta?"
+                  placeholder="¿Cuanto dinero desea ingresar?"
                   matInput
                   formControlName="Monto"
                   required
                 />
-                <label for="idCuenta"
-                  ><b>Id de cuenta que desea ingresar:</b></label
-                >
+                <label for="idCuenta"><b>Id de su cuenta:</b></label>
                 <input
                   type="number"
                   id="idCuenta"
@@ -40,10 +38,31 @@
                   formControlName="IdCuenta"
                   required
                 />
+                <label for="cvuCbuDestino"
+                  ><b>Id de la cuenta destinataria:</b></label
+                >
+                <input
+                  type="number"
+                  id="cvuCbuDestino"
+                  class="form-control cvuCbuDestino"
+                  placeholder="id de cuenta placeholder"
+                  matInput
+                  formControlName="CvuCbuDestino"
+                  required
+                />
+                <!-- <input
+                       type="text"
+                       id="username"
+                       class="form-control"
+                       placeholder="Username"
+                       matInput
+                       formControlName="Username"
+                       required
+                     /> -->
               </div>
               <div class="col">
                 <button type="submit" class="btn btn-block center-block">
-                  <b>Retirar Dinero</b>
+                  <b>Transferir Dinero</b>
                 </button>
               </div>
             </form>
