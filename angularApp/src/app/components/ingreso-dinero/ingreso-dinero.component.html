@@ -4,7 +4,11 @@
       <div class="data-container">
         <div class="card data-card">
           <div class="col">
-            <form class="form-container" [formGroup]="form">
+            <form
+              class="form-container"
+              [formGroup]="form"
+              (ngSubmit)="deposit($event)"
+            >
               <div class="wizard-header">
                 <h3 class="col-sm-12 d-flex justify-content-center">
                   Ingresar Dinero
@@ -37,14 +41,14 @@
                   required
                 />
                 <!-- <input
-                          type="text"
-                          id="username"
-                          class="form-control"
-                          placeholder="Username"
-                          matInput
-                          formControlName="Username"
-                          required
-                        /> -->
+                        type="text"
+                        id="username"
+                        class="form-control"
+                        placeholder="Username"
+                        matInput
+                        formControlName="Username"
+                        required
+                      /> -->
               </div>
               <div class="col">
                 <button type="submit" class="btn btn-block center-block">
