@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { OperacionService } from '../../services/operacion.service';
+import { OperacionDepositoExtraccion } from '../../models/operacion-deposito-extraccion.model';
 import {
   FormControl,
   Validators,
@@ -16,7 +18,10 @@ export class IngresoDineroComponent implements OnInit {
   public idEjemplo: number;
   @Input() mostrarIngresoDeposito: boolean; //parece que aui no se utiliza la entrada mostraringreso para algo significativo
   @Input() entradaIdCuenta: number;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private operacionService: OperacionService,
+    private formBuilder: FormBuilder
+  ) {
     //this.idEjemplo = 5;
     console.log(this.entradaIdCuenta);
     //this.buildForm(this.entradaIdCuenta);
@@ -30,6 +35,21 @@ export class IngresoDineroComponent implements OnInit {
     //this.idEjemplo = 4;
     console.log(this.entradaIdCuenta);
     this.buildForm(this.entradaIdCuenta);
+  }
+
+  deposit(event: Event) {
+    event.preventDefault();
+    if (this.form.valid) {
+      const operacionMontoID = this.form.value;
+      this.operacionService
+        .makeDeposit(operacionMontoID)
+        .subscribe((depositOutput) => {
+          console.log(
+            'Mensaje de la subscripcion al metodo makeDeposit del servicio operacion'
+          );
+          console.log(depositOutput);
+        });
+    }
   }
 
   private buildForm(id: number) {

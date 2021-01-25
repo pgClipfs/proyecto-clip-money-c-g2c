@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { OperacionService } from '../../services/operacion.service';
-// import { OperacionDepositoExtraccion } from '../../models/operacion-deposito-extraccion.model';
+import { OperacionService } from '../../services/operacion.service';
+import { OperacionDepositoExtraccion } from '../../models/operacion-deposito-extraccion.model';
 import {
   FormControl,
   Validators,
@@ -19,7 +19,7 @@ export class ExtraerDineroComponent implements OnInit {
   @Input() mostrarIngresoDeposito: boolean; //parece que aui no se utiliza la entrada mostraringreso para algo significativo
   @Input() entradaIdCuenta: number;
   constructor(
-    // private operacionService: OperacionService,
+    private operacionService: OperacionService,
     private formBuilder: FormBuilder
   ) {
     //this.idEjemplo = 5;
@@ -37,26 +37,26 @@ export class ExtraerDineroComponent implements OnInit {
     this.buildForm(this.entradaIdCuenta);
   }
 
-  // deposit(event: Event) {
-  //   event.preventDefault();
-  //   if (this.form.valid) {
-  //     const operacionMontoID = this.form.value;
-  //     this.operacionService
-  //       .makeDeposit(operacionMontoID)
-  //       .subscribe((depositOutput) => {
-  //         console.log(
-  //           'Mensaje de la subscripcion al metodo makeDeposit del servicio operacion'
-  //         );
-  //         console.log(depositOutput);
-  //       });
-  //   }
-  // }
-
   private buildForm(id: number) {
     this.idEjemplo = 3;
     this.form = this.formBuilder.group({
       Monto: [this.idEjemplo, [Validators.required]],
       IdCuenta: [id, [Validators.required]],
     });
+  }
+
+  extraction(event: Event) {
+    event.preventDefault();
+    if (this.form.valid) {
+      const operacionMontoID = this.form.value;
+      this.operacionService
+        .makeExtraction(operacionMontoID)
+        .subscribe((extractionOutput) => {
+          console.log(
+            'Mensaje de la subscripcion al metodo makeExtraction del servicio operacion'
+          );
+          console.log(extractionOutput);
+        });
+    }
   }
 }

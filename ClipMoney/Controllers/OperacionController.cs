@@ -9,7 +9,7 @@ using System.Web.Http.Cors;
 
 namespace ClipMoney.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [RoutePrefix("api/operacion")]
     public class OperacionController : ApiController
     {
@@ -40,9 +40,9 @@ namespace ClipMoney.Controllers
         }
 
         // POST: api/Operation
-        public void Post([FromBody] string value)
-        {
-        }
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
         // PUT: api/Operation/5
         public void Put(int id, [FromBody] string value)

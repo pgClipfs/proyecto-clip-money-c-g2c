@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
     this.mostrarIngresoDepositoHome = false;
 
     this.dataDashboard = history.state.data;
-    console.log('assssdadsasdasdasdasdadsad');
-    console.log(this.dataDashboard);
-    let accountIdElement = document.querySelector('.account-id');
-    accountIdElement.innerHTML = this.dataDashboard.toString();
+    // console.log('assssdadsasdasdasdasdadsad');
+    // console.log(this.dataDashboard);
+    // let accountIdElement = document.querySelector('.account-id');
+    // accountIdElement.innerHTML = this.dataDashboard.toString();
   }
 
   opcionClick(entrada: { opcionValue: boolean; opcionType: string }) {
