@@ -178,5 +178,21 @@ namespace ClipMoney.Models
 
             return saldo;
         }
+
+        public void ActivarCuenta(int idUsuario, string frente, string reverso)
+        {
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "dbo.proc_activar_cuenta";
+                comm.Connection = conn;
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
+                comm.Parameters.Add(new SqlParameter("@frenteDNI", frente));
+                comm.Parameters.Add(new SqlParameter("@reversoDNI", reverso));
+                comm.ExecuteNonQuery();
+            }
+        }
     }
 }

@@ -19,17 +19,6 @@ namespace ClipMoney.Controllers
             return new string[] { "value1", "value2" };
         }
 
-
-        // POST: api/Operation
-        [AllowAnonymous]
-        [EnableCors(origins: "*", headers: "*", methods: "*")]
-        public void Post([FromBody] Operacion operacionMontoId)
-        {
-            Operacion operacion = new Operacion();
-            operacion.Monto = operacionMontoId.Monto;
-            operacion.IdCuenta = operacionMontoId.IdCuenta;
-            operacion.Depositar();
-        }
         // GET: api/Operation/5
         [AllowAnonymous]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
@@ -40,9 +29,42 @@ namespace ClipMoney.Controllers
         }
 
         // POST: api/Operation
-        //public void Post([FromBody] string value)
-        //{
-        //}
+        [HttpPost]
+        [Route("deposito")]
+        [AllowAnonymous]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public void PostDeposit([FromBody] Operacion operacionMontoId)
+        {
+            Operacion operacion = new Operacion();
+            operacion.Monto = operacionMontoId.Monto;
+            operacion.IdCuenta = operacionMontoId.IdCuenta;
+            operacion.Depositar();
+        }
+
+        [HttpPost]
+        [Route("extraccion")]
+        [AllowAnonymous]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public void PostExtraction([FromBody] Operacion operacionMontoId)
+        {
+            Operacion operacion = new Operacion();
+            operacion.Monto = operacionMontoId.Monto;
+            operacion.IdCuenta = operacionMontoId.IdCuenta;
+            operacion.Extraer();
+        }
+
+        [HttpPost]
+        [Route("transferencia")]
+        [AllowAnonymous]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public void PostTransferencia([FromBody] Operacion operacionMontoIdCvuDestino)
+        {
+            Operacion operacion = new Operacion();
+            operacion.Monto = operacionMontoIdCvuDestino.Monto;
+            operacion.IdCuenta = operacionMontoIdCvuDestino.IdCuenta;
+            operacion.CvuCbuDestino = operacionMontoIdCvuDestino.CvuCbuDestino;
+            operacion.Transferir();
+        }
 
         // PUT: api/Operation/5
         public void Put(int id, [FromBody] string value)

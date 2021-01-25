@@ -1,0 +1,38 @@
+-CAMBIAR LAS FOTOS PARA PERMITIR NULL
+
+-PROCEDIMIENTO DE ALMACENADO:
+
+USE [db_wallet_clip_money]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_activar_cuenta]    Script Date: 24-Jan-21 6:01:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_activar_cuenta]
+	@frenteDNI varchar(MAX),
+	@reversoDNI varchar(MAX),
+	@idUsuario int
+AS
+BEGIN
+	SET NOCOUNT ON;
+		BEGIN TRY
+			BEGIN TRANSACTION
+				
+				UPDATE usuarios
+				   SET 
+						foto_frente_dni = @frenteDNI,
+						foto_reverso_dni = @reversoDNI
+				 WHERE id_usuario=@idUsuario
+			
+				UPDATE cuentas
+				   SET 
+					  cuenta_activa = 1
+				 WHERE id_us=@idUsuario
+			COMMIT TRANSACTION
+		END TRY
+		BEGIN CATCH
+			RAISERROR('An error occurred', 16/*error severity*/, 1);
+			ROLLBACK TRANSACTION
+		END CATCH
+END
