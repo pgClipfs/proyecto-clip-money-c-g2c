@@ -40,6 +40,7 @@ import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-
 import { InformacionDeCuentaComponent } from './components/informacion-de-cuenta/informacion-de-cuenta.component';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 import { UltimosMovimientosComponent } from './components/ultimos-movimientos/ultimos-movimientos.component';
+import { GiroComponent } from './components/giro/giro.component';
 //import {MatInputModule} from '@angular/material/input';
 //import {MatFormFieldModule} from '@angular/material/form-field';
 //import { MatButtonModule } from '@angular/material/button';
@@ -76,6 +77,7 @@ import { UltimosMovimientosComponent } from './components/ultimos-movimientos/ul
     InformacionDeCuentaComponent,
     TransferenciaComponent,
     UltimosMovimientosComponent,
+    GiroComponent,
   ],
   imports: [
     BrowserModule,
