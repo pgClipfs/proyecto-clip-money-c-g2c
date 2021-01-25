@@ -44,4 +44,8 @@ export class NavbarComponent implements OnInit {
       opcionType: 'ultimosMovimientos',
     });
   }
+  habilitarGiro() {
+    console.log('mensaje desde func para habilitar giro');
+    this.opcionClickeada.emit({ opcionValue: true, opcionType: 'giro' });
+  }
 }

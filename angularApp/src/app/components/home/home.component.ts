@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   mostrarInfoBasica: boolean;
   mostrarTransferencia: boolean;
   mostrarUltimosMovimientos: boolean;
+  mostrarGiro: boolean;
 
   constructor() {
     this.mostrarInfoBasica = true;
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
         this.mostrarInfoBasica = false;
         this.mostrarTransferencia = false;
         this.mostrarUltimosMovimientos = false;
+        this.mostrarGiro = false;
         break;
 
       case 'extraccion':
@@ -47,6 +49,7 @@ export class HomeComponent implements OnInit {
         this.mostrarInfoBasica = false;
         this.mostrarTransferencia = false;
         this.mostrarUltimosMovimientos = false;
+        this.mostrarGiro = false;
         break;
 
       case 'infoBasica':
@@ -55,6 +58,7 @@ export class HomeComponent implements OnInit {
         this.mostrarIngresoDepositoHome = false;
         this.mostrarTransferencia = false;
         //this.mostrarUltimosMovimientos = false;
+        this.mostrarGiro = false;
         break;
 
       case 'transferencia':
@@ -63,6 +67,7 @@ export class HomeComponent implements OnInit {
         this.mostrarInfoBasica = false;
         this.mostrarIngresoDepositoHome = false;
         this.mostrarUltimosMovimientos = false;
+        this.mostrarGiro = false;
         break;
 
       case 'ultimosMovimientos':
@@ -71,6 +76,16 @@ export class HomeComponent implements OnInit {
         this.mostrarInfoBasica = false;
         this.mostrarTransferencia = false;
         this.mostrarIngresoDepositoHome = false;
+        this.mostrarGiro = false;
+        break;
+
+        case 'giro':
+        this.mostrarGiro = entrada.opcionValue;
+        this.mostrarExtraccion = false;
+        this.mostrarInfoBasica = false;
+        this.mostrarTransferencia = false;
+        this.mostrarIngresoDepositoHome = false;
+        this.mostrarUltimosMovimientos = false;
         break;
 
       default:
