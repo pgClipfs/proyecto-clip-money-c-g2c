@@ -13,7 +13,7 @@ export class OperacionService {
   url1 = 'https://localhost:44382/api/operacion';
   url2 = 'https://localhost:44382/api/operacion/extraccion';
   url3 = 'https://localhost:44382/api/operacion/transferencia';
-  url4 = 'https://localhost:44382/api/operacion/giroAlDescubierto';
+  url4 = 'https://localhost:44382/api/giro';
   url5 = 'https://localhost:44382/api/movimientos/';
 
   constructor(private httpclient: HttpClient) {
