@@ -80,6 +80,7 @@ export class HomeComponent implements OnInit {
         break;
 
         case 'giro':
+          console.log("giro");
         this.mostrarGiro = entrada.opcionValue;
         this.mostrarExtraccion = false;
         this.mostrarInfoBasica = false;

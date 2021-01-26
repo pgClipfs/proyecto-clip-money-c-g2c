@@ -41,6 +41,11 @@
               [mostrarUltimosMovimientos]="true"
               *ngIf="mostrarUltimosMovimientos"
             ></app-ultimos-movimientos>
+            <app-giro
+              [entradaIdCuenta]="dataDashboard"
+              [mostrarGiro]="false"
+              *ngIf="mostrarGiro"
+            ></app-giro>
           </div>
         </div>
       </div>
